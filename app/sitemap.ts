@@ -1,0 +1,1 @@
+import type {MetadataRoute} from 'next';export default function sitemap():MetadataRoute.Sitemap{const base='https://laurinekarrer.com';return ['','/services','/services/massage','/services/one-to-one','/services/classes','/workshops','/partners','/contact'].map(route=>({url:base+route,lastModified:new Date()}))}
