@@ -15,7 +15,8 @@ export default function Home() {
     <section className="hero">
       <div className="hero-copy">
         <p className="eyebrow">Embodiment · clarity · self-trust</p>
-        <h1>Come back to your body. <span>Find clarity.</span><span>Move from self-trust.</span></h1>
+        <h1>Come back to your body.</h1>
+        <p className="hero-statement">Find clarity. Move from self-trust.</p>
         <p>Massage, therapy sessions, breathwork, classes and workshops designed to help you reconnect with what your body already knows.</p>
         <div className="buttons"><Link className="btn primary" href="/services">Explore services</Link><CTA>Book a session</CTA></div>
       </div>
