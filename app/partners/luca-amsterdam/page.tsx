@@ -8,13 +8,18 @@ export default function LucaAmsterdam(){return <>
   </section>
 
   <section className="section shell partner-detail-hero">
-    <div className="partner-detail-image"><span>LUCA Amsterdam</span></div>
+    <div className="partner-detail-image luca-image"><span>LUCA Amsterdam</span></div>
     <div>
       <p className="eyebrow">About the space</p>
       <h2>The cold heart of the city.</h2>
       <p>Located on Cruquiuseiland in Amsterdam-Oost, LUCA is a warm and stylish wellness space built around health, relaxation and community. The space brings together sauna and ice-bath rituals, massage, art, a bar and inspiring places to work and connect.</p>
       <a className="btn" href="https://www.luca-amsterdam.nl/" target="_blank" rel="noreferrer">Visit LUCA</a>
     </div>
+  </section>
+
+  <section className="shell luca-gallery" aria-label="LUCA Amsterdam partnership photographs">
+    <div className="luca-gallery-room" role="img" aria-label="The massage treatment room at LUCA Amsterdam" />
+    <div className="luca-gallery-laurine" role="img" aria-label="Laurine Karrer at LUCA Amsterdam" />
   </section>
 
   <section className="section approach">

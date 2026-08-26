@@ -12,7 +12,14 @@ const massage:Testimonial[]=[
   {quote:'I had a wonderful massage with Laurine. It felt relaxing and healing, and I plan to book another one soon.',name:'Private client',kind:'Massage'},
   {quote:'It was like space travel. Laurine, you are the best!',name:'Private client',kind:'Massage'},
   {quote:'A very beautiful experience. Laurine knows what she is doing. Thank you!',name:'Private client',kind:'Massage'},
-  {quote:'She has a superpower in the way she takes care of you. The whole experience helped me enter a deeply relaxed state.',name:'Private client',kind:'Blue Detox Facial'}
+  {quote:'She has a superpower in the way she takes care of you. The whole experience helped me enter a deeply relaxed state.',name:'Private client',kind:'Face ritual massage'}
+  ,{quote:'Some weeks after my massage at LUCA, I was already looking to book another session with Laurine.',name:'Private client',kind:'Returning massage client'}
+  ,{quote:'I am still thinking and feeling our session. The movement, touch and breathing truly connected—it was way more than a massage.',name:'Dubi',kind:'Body ritual massage'}
+  ,{quote:'The experience felt connected, relaxing, sensual and magical. I would love to stay in touch and experience another massage.',name:'Rolf',kind:'Body ritual massage'}
+  ,{quote:'The massage did a lot for my system. I immediately wanted to book another session.',name:'Pieter',kind:'Returning massage client'}
+  ,{quote:'From the moment we met, I felt at ease. Laurine creates a welcoming, calm atmosphere and brings genuine care to her work. I left relaxed, recharged and much more balanced.',name:'Private client',kind:'Massage'}
+  ,{quote:'The facial and holistic massage were both marvellous. Laurine’s gentle touch allowed me to enter deep relaxation, and her passion shows in her energy and attentiveness.',name:'Private client',kind:'Face ritual massage'}
+  ,{quote:'I felt every part of my body relax and reached a feeling of total peace. The session was professional, deeply restorative and gave me real time for myself.',name:'Mystery Barragan',kind:'Full body massage'}
 ];
 
 const oneToOne:Testimonial[]=[

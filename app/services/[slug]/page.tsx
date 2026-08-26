@@ -21,23 +21,23 @@ type FaqItem={question:string;answer:string};
 
 const bodyCareFaqs:FaqItem[]=[
   {
-    question:'What makes the Intuitive Healing Touch Ritual different from a classic massage?',
-    answer:'This is not only a sequence of massage techniques. It is a slow, experiential full-body ritual shaped by what your body communicates in the moment. Intuitive touch, deep relaxation and focused abdominal work create space to notice and release physical and emotional tension without having to explain everything in words. It can be a gentle first doorway into my practice if you need care and reconnection before choosing a spoken One-to-One Support session.'
+    question:'What makes the Body Ritual Massage different from a classic massage?',
+    answer:'This is not only a sequence of massage techniques. It is a slow, experiential full-body ritual shaped by what your body communicates in the moment. Intuitive touch, deep relaxation and focused abdominal work create space to notice and release physical and emotional tension without having to explain everything in words. It can be a gentle first doorway into my practice if you need care and reconnection before choosing a spoken Sophrology Session.'
   },
   {
     question:'Why does the ritual include abdominal work?',
     answer:'The abdomen is closely connected to breathing, the nervous system, digestion and the way stress or emotion can be felt physically. With your consent, gentle and attentive abdominal touch can support relaxation, awareness and a sense of inner space. Pressure and positioning are always adapted, and this part can be changed or omitted at any time.'
   },
   {
-    question:'What is the Blue Detox Facial?',
-    answer:'The Blue Detox Facial is a 90-minute upper-body and facial ritual combining lymphatic drainage, sculpting massage, skincare and conscious relaxation. The detox phase supports circulation and the elimination of retained fluids, while the restorative phase helps soften visible signs of stress and ageing and supports the skin’s natural collagen and elastin functions. It is designed to leave the face looking smoother, fuller and more luminous while helping the mind slow down.'
+    question:'What is the Face Ritual Massage?',
+    answer:'The Face Ritual Massage is a 90-minute upper-body and facial ritual combining lymphatic drainage, sculpting massage, skincare and conscious relaxation. The detox phase supports circulation and the elimination of retained fluids, while the restorative phase helps soften visible signs of stress and ageing and supports the skin’s natural collagen and elastin functions. It is designed to leave the face looking smoother, fuller and more luminous while helping the mind slow down.'
   },
   {
-    question:'Who is the Blue Detox Facial for?',
+    question:'Who is the Face Ritual Massage for?',
     answer:'It is especially suited to people who want a deeply relaxing massage experience without undressing for a full-body treatment. Because the ritual is centred on the face, scalp, neck, shoulders and upper body, it can be supportive when you feel mentally overwhelmed, caught in overthinking, tense around the jaw and shoulders, or prone to stress-related headaches. Please seek medical advice for persistent or unexplained headaches.'
   },
   {
-    question:'Is Intuitive Guidance a psychic or predictive card reading?',
+    question:'Is Guidance a psychic or predictive card reading?',
     answer:'Not exactly. I use situational cards through an intuitive coaching method I have developed for personal, relational and professional questions. The intention is not to predict a fixed future, remove your responsibility or tell you what decision to make. I take a wider, “hawk’s-eye” view of the situation to reflect what may be happening now, what it is challenging or transforming in your life, and what perspective may help you move forward with greater clarity and self-trust.'
   },
   {
@@ -60,7 +60,7 @@ const oneToOneFaqs=[
     answer:'The Clarity Session is a focused 90-minute coaching space for one present situation. We use clarity mapping, identity work, body awareness and an embodied action plan to help you make a grounded decision. The 120-minute Awakening Session is a deeper immersive experience combining intuitive guidance, identity numerology, situational cards and sophrology integration. Choose Clarity when you need direction and practical next steps; choose Awakening when you want to explore deeper patterns and see your situation from a broader perspective.'
   },
   {
-    question:'Who is One-to-One Support for?',
+    question:'Who are Sophrology Sessions for?',
     answer:'This support may be helpful if you feel confused, overwhelmed, emotionally overloaded, disconnected from your body or caught in overthinking. It can also support stress management, nervous-system regulation, sleep difficulties, low self-trust, decision paralysis, recurring patterns, identity questions, personal or professional transitions, relationship changes, loss of direction or the desire to reconnect with what genuinely feels right for you.'
   },
   {
@@ -79,8 +79,8 @@ const classesFaqs:FaqItem[]=[
     answer:'No. Body awareness and breathwork classes are accessible to beginners. Each practice is explained progressively, with options to pause, rest or adapt the movement. The intention is not performance; it is learning to notice sensation, breath and your own rhythm.'
   },
   {
-    question:'What is the difference between Body Awareness and Breathwork?',
-    answer:'Body Awareness uses sensation, gentle movement, attention and embodied exploration to strengthen your relationship with your body. Breathwork focuses more directly on conscious breathing patterns to create space, regulate pressure and support nervous-system awareness. Both can overlap, but each class has a different primary doorway.'
+    question:'What is the difference between Body Awareness & Gentle Stretching and Sophrology Breathwork?',
+    answer:'Body Awareness & Gentle Stretching uses accessible movement, sensation and the dynamic-relaxation principles of sophrology to release tension and rebuild a more attentive relationship with your body. Sophrology Breathwork focuses more directly on foundational breathing practices inspired by Alfonso Caycedo’s method, helping you regulate pressure and develop practical tools for daily life. Both approaches overlap, but each class offers a different primary doorway.'
   },
   {
     question:'What can I expect during and after a class?',
@@ -98,4 +98,4 @@ const classesFaqs:FaqItem[]=[
 
 const faqsByService:Record<string,FaqItem[]>={massage:bodyCareFaqs,'one-to-one':oneToOneFaqs,classes:classesFaqs};
 
-export function generateStaticParams(){return services.map(s=>({slug:s.slug}))}export default function ServicePage({params}:{params:{slug:string}}){const s=services.find(x=>x.slug===params.slug);if(!s)notFound();const whatToExpect=expectations[s.slug]??expectations['one-to-one'];const serviceFaqs=faqsByService[s.slug]??[];return <><section className="page-head shell"><p className="eyebrow">Services · {s.number}</p><h1>{s.title}</h1><p>{s.description}</p></section><section className="section shell"><div className="cards">{s.items.map((item,i)=><article className="card" key={item.name}><p className="eyebrow">0{i+1}</p><h3>{item.name}</h3><p>{item.text}</p>{'price' in item&&item.price?<div className="service-meta"><p className="service-price">{'duration' in item&&item.duration?`${item.duration} · `:''}{item.price}</p><small>{'location' in item&&item.location?item.location:'Location — to be confirmed'}</small></div>:<p><small>Duration · Price · Location — to be confirmed</small></p>}<CTA/></article>)}</div></section>{serviceFaqs.length>0&&<section className="section faq-section"><div className="shell faq-shell"><p className="eyebrow">{s.title}</p><h2>Frequently asked questions.</h2><div className="faq-list">{serviceFaqs.map(item=><details className="faq-item" key={item.question}><summary><span>{item.question}</span><span className="faq-plus" aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div></div></section>}<section className="section approach"><div className="shell details"><div><p className="eyebrow">What to expect</p><h2>A space adapted to you.</h2></div><div><p>{sharedExpectation}</p>{whatToExpect.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</div></div></section></>}
+export function generateStaticParams(){return services.map(s=>({slug:s.slug}))}export default function ServicePage({params}:{params:{slug:string}}){const s=services.find(x=>x.slug===params.slug);if(!s)notFound();const whatToExpect=expectations[s.slug]??expectations['one-to-one'];const serviceFaqs=faqsByService[s.slug]??[];return <><section className="page-head shell"><p className="eyebrow">Services · {s.number}</p><h1>{s.title}</h1><p>{s.description}</p></section><section className="section shell"><div className="cards">{s.items.map((item,i)=><article className="card" key={item.name}><p className="eyebrow">0{i+1}</p><h3>{item.name}</h3><p>{item.text}</p>{'price' in item&&item.price?<div className="service-meta">{'options' in item&&Array.isArray(item.options)?<div className="service-options">{item.options.map(option=><p key={option}>{option}</p>)}</div>:<p className="service-price">{'duration' in item&&item.duration?`${item.duration} · `:''}{item.price}</p>}<small>{'location' in item&&item.location?item.location:'Location — to be confirmed'}</small></div>:<p><small>Duration · Price · Location — to be confirmed</small></p>}<CTA/></article>)}</div></section>{serviceFaqs.length>0&&<section className="section faq-section"><div className="shell faq-shell"><p className="eyebrow">{s.title}</p><h2>Frequently asked questions.</h2><div className="faq-list">{serviceFaqs.map(item=><details className="faq-item" key={item.question}><summary><span>{item.question}</span><span className="faq-plus" aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div></div></section>}<section className="section approach"><div className="shell details"><div><p className="eyebrow">What to expect</p><h2>A space adapted to you.</h2></div><div><p>{sharedExpectation}</p>{whatToExpect.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</div></div></section></>}

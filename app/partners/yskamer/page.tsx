@@ -17,6 +17,12 @@ export default function Yskamer(){return <>
     </div>
   </section>
 
+  <section className="shell yskamer-gallery" aria-label="Yskamer partnership photographs">
+    <div className="yskamer-gallery-stretch" role="img" aria-label="Laurine Karrer guiding body awareness at Yskamer" />
+    <div className="yskamer-gallery-partners" role="img" aria-label="Laurine Karrer with the Yskamer team in Amsterdam" />
+    <div className="yskamer-gallery-icebath" role="img" aria-label="Laurine Karrer beside the Yskamer ice bath" />
+  </section>
+
   <section className="section approach">
     <div className="shell details">
       <div><p className="eyebrow">What I offer here</p><h2>Breath, regulation and rest.</h2></div>
