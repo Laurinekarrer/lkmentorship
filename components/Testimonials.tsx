@@ -34,7 +34,10 @@ const oneToOne:Testimonial[]=[
 const classes:Testimonial[]=[
   {quote:'It was my first time trying meditation and I found it an amazing experience. I felt energised and stronger, both physically and spiritually.',name:'Luke',kind:'Class participant'},
   {quote:'Laurine is a very kind and encouraging teacher. Her classes and challenges helped me achieve more than I hoped.',name:'Private client',kind:'Class participant'},
-  {quote:'You received me with open arms and taught me everything I know. I always looked forward to the next class.',name:'Private client',kind:'Class participant'}
+  {quote:'You received me with open arms and taught me everything I know. I always looked forward to the next class.',name:'Private client',kind:'Class participant'},
+  {quote:'I arrived with low energy and left feeling peaceful, energised and more connected to myself. I will definitely come back.',name:'Private client',kind:'Guided practice'},
+  {quote:'The group energy felt powerful and supportive. Even as a beginner, I felt guided through the experience and stronger afterwards.',name:'Private client',kind:'Breath & movement class'},
+  {quote:'Laurine creates a warm space where there is no pressure to perform. The simple movements helped me feel more present in my body.',name:'Private client',kind:'Body awareness class'}
 ];
 
 export function Testimonials(){
@@ -43,7 +46,7 @@ export function Testimonials(){
     if(pathname.includes('/services/massage')) return massage;
     if(pathname.includes('/services/one-to-one')) return oneToOne;
     if(pathname.includes('/services/classes')||pathname.includes('/workshops')) return classes;
-    return [massage[0],oneToOne[0],classes[0]];
+    return [massage[0],oneToOne[0],classes[0],massage[8],oneToOne[5],classes[3]];
   },[pathname]);
   const [index,setIndex]=useState(0);
   useEffect(()=>setIndex(0),[pathname]);

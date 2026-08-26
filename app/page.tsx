@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import RitualAnimation from '../components/RitualAnimation';
 
 export default function Home() {
   const pillars = [
@@ -20,7 +19,7 @@ export default function Home() {
         <div className="buttons"><Link className="btn primary" href="/services">Explore services</Link></div>
       </div>
       <div className="photo hero-photo">
-        <Image src="/laurine-hero.jpg" alt="Laurine Karrer, Body Awareness Facilitator" fill priority sizes="(max-width: 850px) 100vw, 40vw" />
+        <Image src="/laurine-hero.jpg" alt="Laurine Karrer, Sophrologist in Amsterdam" fill priority sizes="(max-width: 850px) 100vw, 40vw" />
       </div>
     </section>
 
@@ -41,8 +40,6 @@ export default function Home() {
       </div>
     </section>
 
-    <RitualAnimation />
-
     <section className="section approach">
       <div className="shell">
         <p className="eyebrow">My approach</p>
@@ -58,9 +55,10 @@ export default function Home() {
         </div>
         <div>
           <p className="eyebrow">About Laurine</p>
-          <h2>French sophrology, rooted in lived experience.</h2>
-          <p>I am a French-trained sophrologist and body-based therapist in Amsterdam. Shaped by my experience in therapeutic and clinical environments, my practice brings together sophrology, breathwork, body awareness and psycho-emotional support.</p>
-          <p>This distinctive French method creates a bridge between the body, the nervous system and meaningful conversation—helping you regulate stress, understand what you are experiencing and move forward with greater clarity.</p>
+          <h2>Sophrology, made human.</h2>
+          <p>I am a certified sophrologist and body-based therapist, trained over three years with Sophrocap and shaped by experience across clinical care, wellness spaces, teaching and hands-on bodywork.</p>
+          <p>Created by neuropsychiatrist Alfonso Caycedo, sophrology combines conscious breathing, gentle movement, dynamic relaxation and guided visualisation. I bring this method into real life with warmth, directness and close attention to what your body is already expressing.</p>
+          <p>As one of the early practitioners bringing sophrology to Amsterdam, I offer a grounded space to regulate stress, rebuild inner resources and understand yourself beyond words alone.</p>
           <div className="note">Based in Amsterdam · Online sessions · Studio collaborations</div>
           <div className="buttons"><Link className="btn primary" href="/services">Start where you are</Link></div>
         </div>

@@ -56,8 +56,8 @@ const oneToOneFaqs=[
     answer:'Yes. A single session can offer an initial experience or a focused reset, while regular sessions create a personalised and progressive therapeutic support. Together, we define an intention and adapt the practices over time—for example around stress regulation, sleep, emotional balance, confidence or a life transition. Simple exercises may be suggested between sessions so that the method becomes a resource you can use independently.'
   },
   {
-    question:'What is the difference between a Clarity Session and an Awakening Session?',
-    answer:'The Clarity Session is a focused 90-minute coaching space for one present situation. We use clarity mapping, identity work, body awareness and an embodied action plan to help you make a grounded decision. The 120-minute Awakening Session is a deeper immersive experience combining intuitive guidance, identity numerology, situational cards and sophrology integration. Choose Clarity when you need direction and practical next steps; choose Awakening when you want to explore deeper patterns and see your situation from a broader perspective.'
+    question:'What is the difference between a Sophrology Session and an Awakening Session?',
+    answer:'The 60-minute Sophrology Session is a personalised practice of breathing, gentle movement, dynamic relaxation and visualisation. It can be booked once or become part of regular support for stress, sleep, emotional regulation and inner resources. The 120-minute Awakening Session is a deeper one-shot experience combining intuitive guidance, identity numerology, situational cards and sophrology integration. Choose Sophrology when you want a practical body–mind method you can build over time; choose Awakening when you want to explore a present situation and its deeper patterns in one immersive session.'
   },
   {
     question:'Who are Sophrology Sessions for?',
