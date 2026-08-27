@@ -8,7 +8,7 @@ const links=[
   {href:'/',label:'About'},
   {href:'/services',label:'Services'},
   {href:'/partners',label:'Partners'},
-  {href:'/booking',label:'Booking'}
+  {href:'/booking',label:'Book & Shop'}
 ];
 
 export function MobileMenu(){

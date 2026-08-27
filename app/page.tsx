@@ -1,5 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import {AboutTabs} from '@/components/AboutTabs';
+import type {Metadata} from 'next';
+
+export const metadata:Metadata={alternates:{canonical:'/'},title:'Certified Sophrologist in Amsterdam',description:'Meet Laurine Karrer, a certified sophrologist in Amsterdam offering sophrology, therapeutic bodywork, ritual massage, body awareness and breathwork in English and French.'};
 
 export default function Home() {
   const pillars = [
@@ -48,21 +52,6 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="section">
-      <div className="shell details">
-        <div className="photo background-photo">
-          <Image src="/laurine-background.jpg" alt="Laurine Karrer" fill sizes="(max-width: 850px) 100vw, 50vw" />
-        </div>
-        <div>
-          <p className="eyebrow">About Laurine</p>
-          <h2>Sophrology, made human.</h2>
-          <p>I am a certified sophrologist and body-based therapist, trained over three years with Sophrocap and shaped by experience across clinical care, wellness spaces, teaching and hands-on bodywork.</p>
-          <p>Created by neuropsychiatrist Alfonso Caycedo, sophrology combines conscious breathing, gentle movement, dynamic relaxation and guided visualisation. I bring this method into real life with warmth, directness and close attention to what your body is already expressing.</p>
-          <p>As one of the early practitioners bringing sophrology to Amsterdam, I offer a grounded space to regulate stress, rebuild inner resources and understand yourself beyond words alone.</p>
-          <div className="note">Based in Amsterdam · Online sessions · Studio collaborations</div>
-          <div className="buttons"><Link className="btn primary" href="/services">Start where you are</Link></div>
-        </div>
-      </div>
-    </section>
+    <AboutTabs />
   </>;
 }

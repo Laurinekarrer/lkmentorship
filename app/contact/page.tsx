@@ -2,7 +2,7 @@ import {CTA} from '@/components/Site';import {config} from '@/content/site';
 
 const faqs=[
   {question:'How do I know which session is right for me?',answer:'You do not need to decide alone. Share what you are currently experiencing and what you would like support with, and we will identify the most relevant format together.'},
-  {question:'Are sessions available in person and online?',answer:'Yes. In-person sessions take place in Amsterdam and selected partner spaces. Sophrology Sessions and Awakening Sessions can also be experienced online.'},
+  {question:'Are sessions available in person and online?',answer:'Yes. In-person sessions take place in Amsterdam and selected partner spaces. Sophrology Sessions are also available online.'},
   {question:'How do I book and pay?',answer:'You can begin through WhatsApp or the contact form. Your time, location, booking link and payment details will be confirmed before your appointment.'},
   {question:'How should I prepare for my session?',answer:'Each service page includes preparation guidance adapted to that experience. In general, choose comfortable clothing, bring water and arrive with enough time to settle.'},
   {question:'What should I share before a body treatment or class?',answer:'Please mention any pregnancy, injury, allergy, medical condition or contraindication before your appointment so the session can be safely adapted to you.'},

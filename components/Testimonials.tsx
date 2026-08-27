@@ -23,12 +23,12 @@ const massage:Testimonial[]=[
 ];
 
 const oneToOne:Testimonial[]=[
-  {quote:'The numerology part gave me a lot of clarity. I understood patterns in my life from a different perspective, and things clicked in a grounding and insightful way.',name:'Private client',kind:'Awakening session'},
+  {quote:'The numerology part gave me a lot of clarity. I understood patterns in my life from a different perspective, and things clicked in a grounding and insightful way.',name:'Private client',kind:'Guidance session'},
   {quote:'Everything made sense and reminded me that I can trust myself. Laurine is gentle, attentive and deeply present.',name:'Private client',kind:'One-to-one session'},
   {quote:'Her guidance helped me move forward, reconnect with myself and see my path more clearly.',name:'Private client',kind:'Clarity guidance'},
   {quote:'I found strengths in myself that I did not know were there and understood my limits. The guidance helped me recentre and see my path with greater clarity.',name:'Private client',kind:'Intuitive guidance'},
   {quote:'I felt respected in what I was experiencing. Nothing was presented as a fixed truth or prediction, so I kept my personal power and felt safe throughout the process.',name:'Private client',kind:'Intuitive guidance'},
-  {quote:'The session combined guidance, numerology and body awareness. Things clicked in a way that felt both grounding and insightful—not only understood in my mind, but felt in my body.',name:'Private client',kind:'Awakening session'}
+  {quote:'The session combined guidance, numerology and body awareness. Things clicked in a way that felt both grounding and insightful—not only understood in my mind, but felt in my body.',name:'Private client',kind:'Guidance session'}
 ];
 
 const classes:Testimonial[]=[
