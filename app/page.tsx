@@ -31,11 +31,10 @@ export default function Home() {
       <div className="shell intro-grid philosophy-grid">
         <div className="philosophy-media">
           <p className="eyebrow">My philosophy</p>
-          <div className="video-placeholder" aria-label="Presentation video placeholder">
-            <span className="play-mark">▶</span>
-            <strong>Presentation video</strong>
-            <small>Coming soon</small>
-          </div>
+          <video className="presentation-video" controls playsInline preload="metadata" poster="/laurine-presentation-poster.jpg" aria-label="Meet Laurine Karrer, certified sophrologist in Amsterdam">
+            <source src="/laurine-presentation.mp4" type="video/mp4" />
+            Your browser does not support this presentation video.
+          </video>
         </div>
         <div>
           <p className="lead">Sophrology brings the body, breath and mind back into conversation.</p>

@@ -1,4 +1,28 @@
-import Link from 'next/link';import {partners} from '@/content/site';
 import type {Metadata} from 'next';
-export const metadata:Metadata={title:'Sophrology & Wellness Partners in Amsterdam',description:'Discover the Amsterdam studios and wellness spaces where Laurine Karrer offers sophrology, breathwork, body awareness and therapeutic massage.',alternates:{canonical:'/partners'}};
-export default function Partners(){return <><section className="page-head shell"><p className="eyebrow">Partners</p><h1>Where we meet.</h1><p>Studios and spaces where care, embodiment and self-awareness create meaningful moments.</p></section><section className="shell partnership-banner"><div><p className="eyebrow">Partnerships</p><h2>What if your space were next?</h2></div><p>Available for aligned studio, wellness, retreat and corporate collaborations.</p><a className="btn primary" href="mailto:info.lkmentorship@gmail.com?subject=Partnership enquiry">Discuss a partnership</a></section><section className="bands shell partners">{partners.map(p=><article className="band partner-band" key={p.slug}><div className={`band-image partner-image partner-image-${p.slug}`} data-label={p.name.toUpperCase()}/><div className="band-copy"><p className="number">{p.city}</p><h2>{p.name}</h2><p>{p.text}</p><Link className="btn" href={`/partners/${p.slug}`}>Explore the space</Link></div></article>)}</section><section className="section approach partnership-cta"><div className="shell intro-grid"><div className="partnership-cta-aside"><p className="eyebrow">Work with me as a partner</p><div className="partnership-photo-slot" role="img" aria-label="Space reserved for a future partnership photograph"><span>Partnership photo</span></div></div><div><h2>Bring embodied care into your space.</h2><p>Available for studio residencies, workshops, events, retreats and aligned collaborations.</p><a className="btn" href="mailto:info.lkmentorship@gmail.com?subject=Partnership enquiry">Discuss a partnership</a></div></div></section></>}
+import {partners} from '@/content/site';
+
+export const metadata:Metadata={title:'Sophrology & Wellness Partners in Amsterdam',description:'Find the Amsterdam spaces where Laurine Karrer Studio offers massage, breathwork and baby spa support.',alternates:{canonical:'/partners'}};
+
+export default function Partners(){return <>
+  <section className="page-head shell">
+    <p className="eyebrow">Partners</p>
+    <h1>Meet me across Amsterdam.</h1>
+    <p>I collaborate with selected wellness spaces to bring my practice into places already dedicated to care and connection. Each partnership makes a specific Laurine Karrer Studio experience available in a setting suited to it.</p>
+  </section>
+
+  <section className="shell partner-compact-grid" aria-label="Laurine Karrer Studio partner locations">
+    {partners.map((partner,index)=><article className="partner-compact-card" key={partner.slug}>
+      <div><p className="number">0{index+1}</p><p className="eyebrow">{partner.city}</p></div>
+      <h2>{partner.name}</h2>
+      <p className="partner-address">{partner.address}</p>
+      <p className="partner-offer-label">What I offer here</p>
+      <ul>{partner.offers.map(offer=><li key={offer}>{offer}</li>)}</ul>
+      <a className="btn" href="/booking">Book with me</a>
+    </article>)}
+  </section>
+
+  <section className="section approach partnership-cta"><div className="shell intro-grid">
+    <div><p className="eyebrow">Collaborate with Laurine Karrer Studio</p></div>
+    <div><h2>Bring embodied care into your space.</h2><p>I offer massage, sophrology, breathwork and body-awareness formats for aligned studios, wellness spaces, retreats and events.</p><a className="btn" href="mailto:info.lkmentorship@gmail.com?subject=Partnership enquiry">Discuss a partnership</a></div>
+  </div></section>
+</>}
