@@ -1,27 +1,11 @@
-# Laurine Karrer Mentorship
+# The Becoming Club — Preview Number Two (without bee emoji)
 
-Site vitrine Next.js en anglais, responsive et prêt à personnaliser.
+This is **the exact `PREVIEW (2).html` you uploaded**, with only three bee emoji instances changed:
 
-## Lancer le site
+- Hero: bee emoji removed, existing star retained.
+- Host section: bee emoji replaced with a typographic star.
+- Footer: bee emoji removed.
 
-```bash
-npm install
-npm run dev
-```
+No other layout, typography, sections, colors, wording or links were changed. The original poster images still contain their drawn bee emblem; those graphics were not edited.
 
-Ouvrir http://localhost:3000.
-
-## Modifier le contenu
-
-- Offres, partenaires, e-mail et lien de réservation : `content/site.ts`
-- Couleurs et styles : `app/globals.css`, variables dans `:root`
-- Textes des pages : fichiers `page.tsx` dans `app/`
-- Remplacer chaque bloc `YOUR PHOTO` par une image optimisée Next.js lorsque les photos définitives sont disponibles.
-
-## Mise en ligne
-
-Importer le dossier dans GitHub puis connecter le dépôt à Vercel. Configurer le domaine définitif et remplacer `https://laurinekarrer.com` dans `app/sitemap.ts` et `app/robots.ts` si nécessaire.
-
-## À compléter avant publication
-
-Photos, e-mail, URL de réservation, tarifs, durées, lieux, workshop actuel, partenaires, liens sociaux, mentions légales, confidentialité et cookies.
+Open `PREVIEW.html` in your browser to preview with the included assets in `public/the-becoming-club/`. This is a **static demonstration**, not a full Next.js/Netlify deployment. To embed this exact design into your existing site, adapt the HTML/CSS to its source project rather than uploading the ZIP as if it were the whole website.
