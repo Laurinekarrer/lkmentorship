@@ -1,0 +1,35 @@
+CORRECTION CIBLÉE — LAURINE KARRER STUDIO / THE BECOMING CLUB
+Dépôt vérifié : https://github.com/Laurinekarrer/lkmentorship
+Branche à mettre à jour : main
+
+CAUSE VÉRIFIÉE
+- La vraie page existe déjà : app/community/page.tsx.
+- Les images sont déjà dans public/the-becoming-club/.
+- Le menu ordinateur dans components/Site.tsx ne comportait PAS Community.
+- Le menu mobile dans components/MobileMenu.tsx ne comportait PAS Community.
+- La carte Workshops dans Choose your doorway renvoyait vers /workshops.
+- La page /community n'était pas dans app/sitemap.ts.
+
+CE ZIP contient UNIQUEMENT 4 fichiers à remplacer dans les MÊMES CHEMINS :
+  components/Site.tsx
+  components/MobileMenu.tsx
+  app/services/page.tsx
+  app/sitemap.ts
+
+ILS FONT :
+- Ajouter Community dans le menu desktop et mobile.
+- Relier la 4e porte de Services («Community & Workshops») à /community#gatherings.
+- Indexer /community dans le sitemap.
+
+INSTALLATION :
+1. Ouvrez le dépôt GitHub existant (NE PAS créer un nouveau dépôt).
+2. Décompressez le ZIP. Dans GitHub / main, remplacez chacun des QUATRE fichiers existants par son équivalent au même chemin (Add file -> Upload files peut fonctionner si le navigateur conserve les sous-dossiers ; sinon ouvrez chaque fichier et collez son contenu avec l'éditeur GitHub).
+3. Validez (Commit changes). Le commit doit apparaître sur la branche main.
+4. Netlify > Deploys : attendez un déploiement Published correspondant au NOUVEAU commit.
+5. Ouvrez https://laurinekarrer.com/community (rechargement forcé Ctrl+F5 si nécessaire).
+6. Si /community renvoie toujours 404 MALGRÉ un nouveau déploiement Published : dans les détails du déploiement, consultez Deploy log et Deploy file browser. Vérifiez que community.html ou community/index.html est effectivement dans le dossier publié.
+
+NE REMPLACEZ PAS app/community/page.tsx, ses styles ou les images : ils sont déjà dans GitHub.
+N'ENVOYEZ PAS CE ZIP DIRECTEMENT DANS NETLIFY. Il est destiné aux fichiers source GitHub.
+
+NOTE : cette correction n'applique pas de modification directe au dépôt : la connexion GitHub de ce chat a refusé l'écriture (HTTP 403). La date et le lien d'événement Meetup direct se configurent séparément dans content/becomingClub.ts.
