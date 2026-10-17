@@ -12,9 +12,9 @@ export const becomingSessions = {
     venueConfirmed: false,
     capacity: 6, // Six participants maximum, excluding the host.
     /** Official public Stripe Payment Link for THIS session only, e.g. https://buy.stripe.com/... */
-    stripePaymentUrl: '',
+    stripePaymentUrl: 'https://buy.stripe.com/6oU4gBb8yge1gxOdRM0kE00',
     /** Required before opening paid bookings. */
-    cancellationPolicy: '',
+    cancellationPolicy: 'Full refund for cancellations at least 24 hours before the session. Cancellations less than 24 hours before the session or no-shows are non-refundable. If the organiser cancels, a full refund is offered. If rescheduled, you may request a full refund if the new date does not suit you. To cancel, email info.laurinekarrerstudio@gmail.com using the email address provided at registration. Refunds are sent to the original payment method. Statutory consumer rights remain unaffected.',
   },
   themes: [
     { number: '01', verb: 'DISCOVER', title: 'Who Am I Becoming?', description: 'Explore who I am beyond roles and expectations.' },
