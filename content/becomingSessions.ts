@@ -1,4 +1,4 @@
-/** Becoming Sessions: public booking settings. No secret API keys belong here. */
+/** Becoming Sessions: public information; add confirmed venue and checkout when ready. */
 export const becomingSessions = {
   priceEuros: 10,
   meetupGroupUrl: 'https://www.meetup.com/the-becoming-club-women-in-amsterdam/',
@@ -10,17 +10,17 @@ export const becomingSessions = {
     city: 'Amsterdam',
     venueLabel: 'Venue to be confirmed',
     venueConfirmed: false,
-    capacity: 6,
-    /** Public Stripe Payment Link for THIS ONE session, starting with https://buy.stripe.com/ . */
+    capacity: 6, // Six participants maximum, excluding the host.
+    /** Official public Stripe Payment Link for THIS session only, e.g. https://buy.stripe.com/... */
     stripePaymentUrl: '',
-    /** Fill in your approved refund/cancellation terms before opening paid registration. */
+    /** Required before opening paid bookings. */
     cancellationPolicy: '',
   },
   themes: [
-    { number: '01', title: 'Who Am I Becoming?', subtitle: 'Identity beyond roles and expectations.', description: 'Explore the roles you carry, the version of yourself you present, and what feels true today.' },
-    { number: '02', title: 'Finding Your Place', subtitle: 'Belonging and feeling at home.', description: 'Reflect on where, with whom and in which environments you genuinely feel at ease.' },
-    { number: '03', title: 'The Patterns We Carry', subtitle: 'The choices and reactions we repeat.', description: 'Notice recurring habits and responses with curiosity, not judgement.' },
-    { number: '04', title: 'From Confusion to Clarity', subtitle: 'What matters and what feels out of sync.', description: 'Untangle priorities and understand where your energy wants to go next.' },
-    { number: '05', title: 'Move From Self-Trust', subtitle: 'One honest next step.', description: 'Leave with a small, realistic decision rooted in your own needs and values.' },
+    { number: '01', verb: 'DISCOVER', title: 'Who Am I Becoming?', description: 'Explore who I am beyond roles and expectations.' },
+    { number: '02', verb: 'ALIGN', title: 'Finding My Balance', description: 'Explore my needs, relationships and inner harmony.' },
+    { number: '03', verb: 'EXPRESS', title: 'Finding My Voice', description: 'Give more space to my feelings and express myself freely.' },
+    { number: '04', verb: 'CLARIFY', title: 'From Confusion to Clarity', description: 'Recognise what matters to me and choose a clear direction.' },
+    { number: '05', verb: 'MOVE', title: 'Move with Self-Trust', description: 'Take my next step with self-trust and confidence.' },
   ],
 } as const;

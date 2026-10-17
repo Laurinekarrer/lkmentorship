@@ -1,0 +1,23 @@
+# CORRECTION URGENTE — Becoming Sessions
+
+Ce ZIP ne contient que les **trois fichiers de la dernière version**.
+La page publique restera : https://laurinekarrer.com/community/becoming-sessions/
+
+## NE PAS envoyer ce ZIP tel quel dans GitHub.
+Il faut le DÉCOMPRESSER et remplacer les trois fichiers existants, aux mêmes emplacements :
+
+1. `app/community/becoming-sessions/page.tsx` — contenu de la page, « One circle. Three dimensions », pictogrammes et retour au club.
+2. `app/community/becoming-sessions/page.module.css` — taille et présentation des cartes sur mobile et ordinateur.
+3. `content/becomingSessions.ts` — programmes « Finding My Balance » et « Finding My Voice », six places et 10 €.
+
+## Étapes GitHub depuis le navigateur
+1. Ouvre le dépôt Laurinekarrer/lkmentorship sur la branche main.
+2. Dans le dossier `app/community/becoming-sessions`, remplace les **deux fichiers existants** `page.tsx` et `page.module.css` par leurs versions de ce ZIP. Utilise « Add file » > « Upload files » depuis le dossier concerné si GitHub propose le remplacement ; sinon ouvre chaque fichier, clique sur le crayon (Edit) et colle le contenu du fichier téléchargé. Puis « Commit changes ».
+3. Dans `content`, remplace `becomingSessions.ts` puis « Commit changes ».
+4. Dans GitHub, ouvre `app/community/becoming-sessions/page.tsx` et recherche « Three dimensions. » ; si absent, tes fichiers ne sont pas au bon endroit ou pas sur main.
+5. Attends que Netlify indique un déploiement réussi et recharge la page en navigation privée.
+
+## Important
+- Télécharger la prévisualisation ChatGPT **ne met pas à jour** ton domaine. Le lien à donner sur Meetup est celui du domaine laurinekarrer.com uniquement une fois la mise à jour publiée.
+- Ton paiement Stripe n'est pas activé par cette correction.
+- Le correctif ne touche ni au formulaire existant ni au reste des pages du site.

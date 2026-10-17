@@ -10,3 +10,48 @@
 @media(max-width:920px){.hero{grid-template-columns:1fr 1fr}.heroCopy{padding:70px 4vw}.firstGrid{gap:24px}.register{gap:5%}}
 @media(max-width:780px){.hero,.why,.firstGrid,.register{grid-template-columns:1fr}.heroCopy{padding:65px 7vw}.heroArt{min-height:490px}.why,.first,.path,.register{padding:75px 6vw}.firstGrid{gap:20px}.host{padding:80px 6vw}.formPanel{max-width:none}.top{align-items:flex-start;flex-direction:column}.band{font-size:.56rem;gap:8px}}
 @media(max-width:460px){.hero h1{font-size:clamp(4.5rem,16vw,6rem)}.heroArt{min-height:390px}.theme{grid-template-columns:38px 1fr 16px;gap:10px}.theme h3{font-size:1.9rem}.formPanel,.steps,.details{padding:25px}.form .two{grid-template-columns:1fr}.top nav{gap:12px}.bottom{flex-direction:column}}
+
+/* Clarity edition — compact three-part concept and shorter, scannable sections */
+.why{display:block;max-width:none;background:#fffaf4;padding:80px max(6vw,30px);text-align:center}
+.sectionHeading{max-width:740px;margin:0 auto 38px}
+.sectionHeading h2{margin-bottom:18px}
+.sectionHeading>p:last-child{color:var(--muted);font-size:.92rem}
+.connectionGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:1180px;margin:0 auto;gap:15px;text-align:left}
+.connectionCard{padding:25px 26px;background:#f4ece2;border-top:2px solid var(--wine)}
+.connectionCard>span{font-size:.65rem;font-weight:700;letter-spacing:.15em;color:var(--wine)}
+.connectionCard h3{font-size:clamp(1.5rem,2.3vw,2.2rem);color:var(--wine);margin:13px 0 9px}
+.connectionCard p{font-size:.85rem;color:var(--muted);line-height:1.7;margin:0}
+.whyBottom{color:var(--muted);font-size:.79rem;max-width:740px;margin:25px auto 0}
+.path{padding-top:82px;padding-bottom:85px}.pathIntro{margin-bottom:32px}
+.theme{padding:18px 8px;align-items:center}.theme h3{font-size:clamp(1.65rem,2.6vw,2.55rem);margin:2px 0 4px}
+.theme p{font-size:.84rem;margin:0}.verb{font-size:.65rem;letter-spacing:.16em;font-weight:700;color:var(--wine)}
+.first{padding-top:82px;padding-bottom:82px}.firstHead{margin-bottom:33px}.steps ul{margin:21px 0 0;padding-left:23px}.steps li{margin:0 0 17px;color:var(--ink);font-size:.94rem}.steps li::marker{color:var(--wine)}
+.stepsNote{font-size:.78rem;color:var(--muted);line-height:1.6;border-top:1px solid var(--line);padding-top:18px;margin-top:22px}
+.host{padding-top:72px;padding-bottom:75px}.host h2{margin-bottom:20px}
+.host p:not(.kicker){color:var(--muted);max-width:790px;margin:17px auto 0;font-size:.9rem;line-height:1.8}
+.host strong{font-weight:700;color:var(--wine)}.hostLink{display:inline-block;margin-top:24px;border-bottom:1px solid var(--wine);font-size:.78rem;font-weight:700;color:var(--wine)!important}
+.register{padding-top:80px;padding-bottom:85px}
+@media(max-width:780px){.connectionGrid{grid-template-columns:1fr}.why{padding:70px 6vw}.first,.path,.register{padding-top:70px;padding-bottom:70px}}
+
+/* Updated three-connection experience cards */
+.connectionCard{display:flex;flex-direction:column;align-items:flex-start;min-height:218px;justify-content:flex-start;border-top:0;border:1px solid #e3d1c5;background:#f7f0e9;padding:29px 28px}
+.connectionIcon{width:36px;height:36px;color:var(--wine);margin-bottom:12px;flex-shrink:0}
+.connectionCard h3{margin:4px 0 10px;font-size:clamp(1.65rem,2.4vw,2.4rem)}
+.connectionCard p{line-height:1.65}
+@media(max-width:780px){.connectionCard{min-height:0;padding:26px}.connectionGrid{gap:12px}}
+
+/* Final small refinements: discreet three dimensions, inline icons, and clear navigation */
+.why{padding-top:67px;padding-bottom:74px}
+.sectionHeading{max-width:730px;margin-bottom:29px}
+.sectionHeading h2{font-size:clamp(1.95rem,3.4vw,3.5rem);line-height:1.17;margin-bottom:10px}
+.sectionHeading>p:last-child{font-size:.86rem;line-height:1.6;max-width:610px;margin:0 auto}
+.connectionCard{min-height:0;padding:24px 24px 26px}
+.cardHeading{display:flex;align-items:center;gap:12px;margin-bottom:11px}
+.cardHeading .connectionIcon{width:30px;height:30px;margin:0;flex:none}
+.cardHeading h3{margin:0;font-size:clamp(1.31rem,1.65vw,1.67rem);line-height:1.2}
+.connectionCard p{font-size:.84rem;line-height:1.68}
+.backToClub{display:inline-flex;align-items:center;gap:6px;color:var(--wine)!important;font-weight:700;white-space:nowrap;border-bottom:1px solid var(--wine);padding-bottom:2px}
+.backToClub:hover{text-decoration:none!important;opacity:.8}
+@media(max-width:780px){.why{padding-top:58px;padding-bottom:60px}.connectionCard{padding:24px}.sectionHeading h2{font-size:clamp(2rem,8vw,2.85rem)}}
+
+.whyBottom{padding-top:20px}
