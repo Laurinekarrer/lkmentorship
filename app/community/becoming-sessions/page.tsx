@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import RegistrationForm from './RegistrationForm';
 import styles from './page.module.css';
 import { becomingSessions as s } from '../../../content/becomingSessions';
 
@@ -13,7 +12,8 @@ export const metadata: Metadata = {
 
 const { workshop: w } = s;
 const safeStripe = /^https:\/\/buy\.stripe\.com\//.test(w.stripePaymentUrl);
-const canTakePayments = w.venueConfirmed && safeStripe && w.cancellationPolicy.trim().length > 0;
+// The venue can be announced after purchase; the date, time and city remain fixed.
+const canTakePayments = safeStripe && w.cancellationPolicy.trim().length > 0;
 
 export default function BecomingSessionsPage() {
   return <main className={styles.page} id="top">
@@ -27,7 +27,7 @@ export default function BecomingSessionsPage() {
         <p className={styles.lead}>From self-discovery to <em>self-trust.</em></p>
         <p>Five small-group gatherings to reconnect with yourself, share with others and move forward with a little more clarity.</p>
         <div className={styles.tags}><span>6 women</span><span>90 minutes</span><span>English</span><span>€10 / session</span></div>
-        <a className={styles.primary} href="#reserve">Join Session 01 <span aria-hidden="true">↗</span></a>
+        <a className={styles.primary} href={canTakePayments ? w.stripePaymentUrl : "#reserve"} target={canTakePayments ? "_blank" : undefined} rel={canTakePayments ? "noopener noreferrer" : undefined}>Book my place · €{s.priceEuros} <span aria-hidden="true">↗</span></a>
       </div>
       <div className={styles.heroArt}><Image src="/the-becoming-club/becoming-sessions.webp" alt="Becoming Sessions — The Becoming Club original artwork" fill priority sizes="(max-width: 780px) 100vw, 42vw" style={{objectFit:'contain'}} /></div>
     </section>
@@ -77,7 +77,7 @@ export default function BecomingSessionsPage() {
           <li>Journaling and conversation</li>
           <li>One insight to take into your week</li>
         </ul><p className={styles.stepsNote}>A welcoming, non-therapeutic group experience. No need to prepare or share anything personal.</p></div>
-        <aside className={styles.details}><span className={styles.kicker}>SESSION DETAILS</span><h3>{w.dateLabel}</h3><p>{w.timeLabel} · {w.city}</p><p>{w.venueLabel}</p><div className={styles.detailRule}/><p><strong>Circle</strong> · {w.capacity} women</p><p><strong>Language</strong> · English</p><p><strong>Introductory price</strong> · €{s.priceEuros} per session</p><a className={styles.primary} href="#reserve">{canTakePayments ? 'Register & pay €10' : 'Join the priority list'} ↗</a></aside>
+        <aside className={styles.details}><span className={styles.kicker}>SESSION DETAILS</span><h3>{w.dateLabel}</h3><p>{w.timeLabel} · {w.city}</p><p>{w.venueLabel}</p><div className={styles.detailRule}/><p><strong>Circle</strong> · {w.capacity} women</p><p><strong>Language</strong> · English</p><p><strong>Introductory price</strong> · €{s.priceEuros} per session</p><a className={styles.primary} href={canTakePayments ? w.stripePaymentUrl : "#reserve"} target={canTakePayments ? "_blank" : undefined} rel={canTakePayments ? "noopener noreferrer" : undefined}>{canTakePayments ? "Book my place · €10" : "Booking information"} ↗</a></aside>
       </div>
     </section>
 
@@ -88,8 +88,24 @@ export default function BecomingSessionsPage() {
     </section>
 
     <section className={styles.register} id="reserve" aria-labelledby="reserve-title">
-      <div className={styles.registerIntro}><p className={styles.kicker}>SESSION 01 · REGISTRATION</p><h2 id="reserve-title">A place in <em>our circle.</em></h2><p>Interested in 26 October? Leave your details below.</p><p className={styles.price}><strong>€{s.priceEuros}</strong><span>per session · 90 minutes</span></p><p className={styles.fine}>{!canTakePayments ? 'The venue and checkout are being finalised. This form joins the priority list; it does not reserve a place or take payment.' : 'After submitting, complete the secure Stripe payment. Your place is confirmed by the organiser after payment verification.'}</p></div>
-      <div className={styles.formPanel}><RegistrationForm price={s.priceEuros} paymentUrl={canTakePayments ? w.stripePaymentUrl : ''} cancellationPolicy={w.cancellationPolicy}/></div>
+      <div className={styles.registerIntro}>
+        <p className={styles.kicker}>SESSION 01 · SECURE BOOKING</p>
+        <h2 id="reserve-title">A place in <em>our circle.</em></h2>
+        <p>Six women. One thoughtful afternoon. A little clarity, connection and time for yourself.</p>
+        <p className={styles.price}><strong>€{s.priceEuros}</strong><span>one-time payment · 90 minutes</span></p>
+        <p className={styles.fine}><strong>Monday 26 October · 14:00–15:30 · Amsterdam</strong></p>
+        <p className={styles.fine}>The session takes place in Amsterdam. Exact venue details will be shared by email before the event.</p><p className={styles.fine}>€{s.priceEuros} reserves one seat in the guided circle. Drinks and food are not included and can be purchased separately at the venue.</p>
+      </div>
+      <div className={styles.formPanel}>
+        <h3>Reserve your spot ♡</h3>
+        <p className={styles.formIntro}>Six places only. €{s.priceEuros} reserves your spot in the circle; drinks and food are not included. Secure payment via Stripe, with no additional registration form.</p>
+        {canTakePayments ? <a className={styles.submit} href={w.stripePaymentUrl} target="_blank" rel="noopener noreferrer">Book my place · €{s.priceEuros} ↗</a> : <p>If the payment link is temporarily unavailable, please contact <a href="mailto:info.laurinekarrerstudio@gmail.com">info.laurinekarrerstudio@gmail.com</a> for details.</p>}
+        <p className={styles.formNote} style={{marginTop:'13px',fontSize:'.77rem'}}>
+          Before completing payment, please review our{' '}
+          <Link href="/community/becoming-sessions/cancellation-policy" target="_blank" rel="noopener noreferrer" style={{fontWeight:700,color:'#791625',textDecoration:'underline',textUnderlineOffset:'3px'}}>cancellation & refund policy ↗</Link>.
+        </p>
+        <p className={styles.formNote} style={{marginTop:'16px'}}>Payment confirmation is sent by Stripe. Laurine will share the exact Amsterdam venue by email before the event.</p>
+      </div>
     </section>
 
     <footer className={styles.bottom}><span>THE BECOMING CLUB · BY LAURINE KARRER STUDIO</span><Link href="/community">Back to the Club ↗</Link><a href={s.meetupGroupUrl} target="_blank" rel="noopener noreferrer">Meetup ↗</a></footer>

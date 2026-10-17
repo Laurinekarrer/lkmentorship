@@ -1,0 +1,19 @@
+ .page{--wine:#791625;--cream:#faf5ed;--ink:#382326;--muted:#745d5f;--line:#ddcbbb;min-height:100vh;background:var(--cream);color:var(--ink);font-family:Manrope,'Avenir Next',Arial,sans-serif;line-height:1.7}
+.page *{box-sizing:border-box}.page a{color:var(--wine)}
+.band{background:var(--wine);color:#fff6ed;padding:12px 22px;text-align:center;font-size:.66rem;letter-spacing:.17em;font-weight:700}
+.band span{margin:0 16px}.content{max-width:860px;margin:0 auto;padding:44px 6vw 75px}
+.back{display:inline-block;font-size:.83rem;font-weight:700;text-decoration:none;border-bottom:1px solid var(--wine);padding-bottom:2px;margin-bottom:65px}
+.eyebrow{font-size:.69rem;color:var(--wine);letter-spacing:.18em;font-weight:700;margin:0 0 18px}
+.content h1,.content h2{font-family:'Bodoni Moda',Didot,Georgia,serif;font-weight:400;line-height:1.13}
+.content h1{font-size:clamp(3rem,7.5vw,5.5rem);letter-spacing:-.055em;color:var(--wine);margin:0 0 17px}
+.content h1 em{font-weight:400}.intro{font:italic 1.27rem/1.5 Georgia,serif;color:var(--muted);margin:0 0 42px}
+.card{background:#fffaf4;border:1px solid var(--line);padding:clamp(22px,5vw,42px)}
+.card h2,.extras h2{color:var(--wine);font-size:clamp(1.8rem,3.8vw,2.4rem);margin:0 0 6px}
+.muted{color:var(--muted);font-size:.83rem;margin:0 0 22px}
+.card dl{margin:24px 0}.card dl div{border-top:1px solid var(--line);padding:14px 0}.card dl div:last-child{border-bottom:1px solid var(--line)}
+.card dt{font-weight:700;color:var(--wine);font-size:.9rem}.card dd{margin:4px 0 0;font-size:.85rem;color:var(--muted)}
+.card p,.extras p{font-size:.9rem;color:var(--muted)}.card a{font-weight:700;overflow-wrap:anywhere}
+.extras{padding:38px 0 55px}.extras h2{margin-bottom:12px}.extras strong{color:var(--wine)}.extras .legal{font-size:.78rem;font-style:italic;margin-top:23px}
+.footer{background:var(--wine);color:#faf0e5;padding:28px 6vw;font-size:.68rem;letter-spacing:.08em;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer a{color:#faf0e5;text-decoration:none}.footer a:hover{text-decoration:underline}
+@media(max-width:560px){.content{padding-top:30px}.back{margin-bottom:46px}.band{font-size:.55rem}.footer{flex-direction:column}}
