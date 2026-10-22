@@ -1,34 +1,38 @@
-# Becoming Sessions — Réservation directe + conditions séparées
+# CoCo 02 — lien Stripe intégré (22 octobre 2026)
 
-Cette archive contient UNIQUEMENT les fichiers nécessaires à la modification de la page Becoming Sessions. Ne touche pas au design des autres pages.
+## Mise à jour prête à importer
 
-## Résultat attendu
-- Fin du formulaire « Join priority list » et des messages « form submission ».
-- Boutons « Book my place · €10 » ouvrant le Stripe Payment Link officiel.
-- Précision claire : les 10 € couvrent la place dans le cercle, PAS les boissons ni la nourriture.
-- Petite mention sous le bouton « Please review our cancellation & refund policy » avec ouverture d'une page dédiée, sur le même domaine.
-- La page de conditions reprend remboursement jusqu'à 24h, annulation organisatrice, contact `info.laurinekarrerstudio@gmail.com`, lieu annoncé par email.
-- Les 3 dimensions et 5 sessions restent inchangées.
+Le paiement Stripe officiel transmis a été intégré :
+`https://buy.stripe.com/3cI00l6SiaTH2GY8xs0kE02`
 
-## Où mettre chaque fichier
+La page `/community/coco-02/` contient désormais un bouton actif **Book my spot · from €2**, qui ouvre directement ce lien dans un nouvel onglet. Le formulaire Meetup ne confirme pas la réservation ; le paiement Stripe est requis. Le lien vers la politique d'annulation apparaît sous le bouton. Le prix affiché est un minimum de 2 € ; les boissons et la nourriture sont à régler à part.
 
-Décompresse le ZIP, puis dans ton dépôt GitHub `Laurinekarrer/lkmentorship` sur `main` :
+## Installation GitHub (branche main)
 
-1. Remplace `app/community/becoming-sessions/page.tsx` (c'est indispensable : actuellement, GitHub contient encore le formulaire !).
-2. Remplace `content/becomingSessions.ts` (Stripe 10 €, six places, lieu à confirmer).
-3. Crée `app/community/becoming-sessions/cancellation-policy/page.tsx`.
-4. Crée `app/community/becoming-sessions/cancellation-policy/page.module.css`.
+1. Extraire ce ZIP sur l'ordinateur.
+2. Déposer les dossiers `app/` et `content/` à la RACINE du dépôt `Laurinekarrer/lkmentorship`, en conservant l'arborescence exacte. Si GitHub propose de remplacer des fichiers existants, vérifier et valider les fichiers listés ci-dessous.
+3. Ne pas déposer le ZIP comme un seul fichier dans le dépôt.
+4. Laisser Netlify redéployer. Vérifier que le dernier déploiement est indiqué **Published**.
+5. Tester la page `https://laurinekarrer.com/community/coco-02/` : cliquer **Book my spot · from €2** et vérifier que la page de paiement affiche « CoCo 02 — Coffee & Connection » et permet une contribution minimale de 2 €. Ne pas effectuer un vrai paiement uniquement pour tester.
+6. Tester `https://laurinekarrer.com/community/coco-02/cancellation-policy/`.
 
-Pour un remplacement sur GitHub, va dans le chemin du fichier, clique sur Edit (crayon), colle le contenu du fichier téléchargé, clique sur Commit changes. Pour les 2 nouveaux fichiers, navigue dans le dossier `app/community/becoming-sessions` puis Add file > Create new file, saisis `cancellation-policy/page.tsx` (puis idem pour `page.module.css`) et colle le contenu correspondant. Tu peux aussi faire ces opérations depuis un clone Git local. Ne charge pas le ZIP directement comme si c'était un fichier du site.
+## Fichiers concernés
 
-Après modification : Netlify > Deploys doit indiquer Published sur le dernier commit. Ne partage pas le lien avant d'avoir confirmé que le nouveau bouton s'ouvre et que la page policy s'affiche.
+- `content/coco02.ts`: lien Stripe activé, date et lieu EN ATTENTE DE CONFIRMATION.
+- `app/community/coco-02/page.tsx`: page de présentation/réservation, utilise la donnée de `content/coco02.ts`.
+- `app/community/coco-02/page.module.css`: mise en page identité The Becoming Club.
+- `app/community/coco-02/cancellation-policy/page.tsx`: conditions d'annulation.
+- `app/community/page.tsx`: accès à CoCo 02 depuis la page Community.
+- `content/becomingClub.ts`: détails CoCo 02 et FAQ sur les réservations par paiement.
 
-## Tester
+## IMPORTANT AVANT DE PARTAGER LE LIEN
 
-- https://laurinekarrer.com/community/becoming-sessions/ doit afficher « Book my place · €10 » à la place du formulaire.
-- https://laurinekarrer.com/community/becoming-sessions/cancellation-policy/ doit afficher la mini-page dédiée.
-- Le bouton doit ouvrir https://buy.stripe.com/6oU4gBb8yge1gxOdRM0kE00 sans payer pendant le test.
-- Dans Stripe, vérifie quantité fixée 1, limite à six paiements, collecte d'email et nom, politique consultable avant paiement.
-- Si Stripe checkout est inaccessible, n'annonce pas la réservation comme active.
+- La date **mercredi 4 novembre 2026, 14 h–15 h 30** est encore marquée « proposed » dans `content/coco02.ts` (`dateIsConfirmed: false`).
+- La table de **7 personnes à Café Belcampo** (six participantes plus Laurine) n'est pas confirmée : `locationIsConfirmed: false`. Ne passer ces flags à `true` qu'après confirmation réelle.
+- Vérifier dans Stripe que le lien est **actif**, que le minimum est **2 €**, que le paiement correspond à une seule place, et si possible que le nombre de paiements réussis est limité à **six**. Ces paramètres Stripe ne sont pas modifiés par le ZIP.
+- La page utilise le visuel déjà présent dans votre site : `public/the-becoming-club/coffee-connection.webp`.
+- La connexion GitHub permet la lecture mais pas l'écriture depuis ChatGPT : ce ZIP n'est pas encore publié.
 
-**Attention :** ces modifications ne sont PAS automatiquement publiées sur GitHub ni sur Netlify depuis cette conversation.
+## Lien à partager immédiatement
+
+Pour les participantes, tant que le site n'est pas redéployé : `https://buy.stripe.com/3cI00l6SiaTH2GY8xs0kE02`

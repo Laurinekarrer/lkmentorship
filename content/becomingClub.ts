@@ -2,7 +2,7 @@
 export const becomingClub = {
   meetupGroupUrl: 'https://www.meetup.com/the-becoming-club-women-in-amsterdam/',
   instagramUrl: 'https://www.instagram.com/laurine.karrer/',
-  contactEmail: 'info.lkmentorship@gmail.com',
+  contactEmail: 'info.laurinekarrerstudio@gmail.com',
   heroEyebrow: 'THE BECOMING CLUB · A WOMEN’S COMMUNITY IN AMSTERDAM',
   heroTitle: 'Come as you are. Become together.',
   heroCopy: 'A little space for genuine friendships, meaningful conversations and self-discovery. From cosy coffee and tea gatherings to guided Becoming Sessions — your place at the table starts here.',
@@ -10,9 +10,9 @@ export const becomingClub = {
   coffee: {
     title: 'Coffee & Connection', subtitle: 'Come for the coffee. Stay for the connection.',
     text: 'An intimate afternoon to meet new women, explore beautiful cafés around Amsterdam and enjoy honest conversations in a relaxed setting. Come alone — you will not be the only one.',
-    meta: ['Small circle · 5 guests + host', '90 minutes', 'Free · your drinks are your own'],
-    nextLabel: 'First gathering · Wed 21 October · 14:00–15:30',
-    venueLabel: 'Moods Coffee & Brunch · Amsterdam',
+    meta: ['6 women + host', '90 minutes', 'Reservation contribution · from €2', 'Drinks purchased separately'],
+    nextLabel: 'CoCo 02 · Wed 4 November · 14:00–15:30 (proposed)',
+    venueLabel: 'Café Belcampo · De Hallen, Amsterdam (pending table confirmation)',
     /** Paste the individual published event link here. Until then, RSVP opens the Meetup group. */
     eventUrl: '',
   },
@@ -37,6 +37,6 @@ export const becomingClub = {
     { question: 'Can I come alone?', answer: 'Of course. That’s exactly what this community is for. You’ll be welcomed into a small circle.' },
     { question: 'Who is the club for?', answer: 'Women in Amsterdam, especially those in their mid-twenties to early forties, including expats, travellers and locals. English is our shared language.' },
     { question: 'Is it a therapy group?', answer: 'No. Coffee gatherings are social, and Becoming Sessions are guided self-reflection workshops, not group psychotherapy. Personal sharing is always optional.' },
-    { question: 'How do I book?', answer: 'RSVP for free Coffee & Connection gatherings on Meetup. The Becoming Sessions programme and registration form are at /community/becoming-sessions. Paid bookings open once the venue and secure checkout are confirmed.' },
+    { question: 'How do I book?', answer: 'For CoCo 02, reserve your place through the Stripe checkout linked on /community/coco-02; a Meetup RSVP alone doesn't secure a seat. For guided Becoming Sessions, use /community/becoming-sessions.' },
   ],
 } as const;

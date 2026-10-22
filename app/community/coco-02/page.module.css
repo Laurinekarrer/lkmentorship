@@ -1,0 +1,24 @@
+
+.page{--wine:#791625;--cream:#FAF5ED;--muted:#786466;--ink:#382326;--beige:#EEE2D6;--line:#DCC9B9; background:var(--cream);color:var(--ink);font-family:Manrope,'Avenir Next',Arial,sans-serif;line-height:1.65;min-height:100vh}
+.page *{box-sizing:border-box}.page h1,.page h2,.page h3,.page p{margin-top:0}
+.page h1,.page h2,.page h3{font-family:'Bodoni Moda',Didot,Georgia,serif;font-weight:400;line-height:1.1}
+.page a{color:inherit;text-decoration:none}.ribbon{background:var(--wine);color:#FFF7EE;display:flex;justify-content:center;align-items:center;gap:16px;padding:12px 18px;font-size:.64rem;letter-spacing:.16em;font-weight:700;text-align:center}
+.nav{max-width:1300px;margin:auto;padding:21px 5.5%;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);font-size:.79rem}
+.nav a:hover,.links a:hover{text-decoration:underline;color:var(--wine)}.nav a:first-child{color:var(--wine);font-weight:700}
+.hero{display:grid;grid-template-columns:1.08fr .92fr;max-width:1450px;margin:auto;min-height:570px}
+.heroText{padding:80px 6vw 80px clamp(28px,7vw,110px);align-self:center}
+.kicker{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);margin-bottom:19px}.hero h1{font-size:clamp(3.85rem,7vw,7.6rem);color:var(--wine);letter-spacing:-.065em;margin-bottom:26px;line-height:.96}.hero h1 em{font-weight:400}
+.lead{font-family:Georgia,serif;font-size:clamp(1.3rem,2.4vw,1.9rem);font-style:italic;color:var(--wine);margin-bottom:20px}
+.heroDesc{max-width:510px;color:var(--muted);font-size:.99rem}
+.meta{display:flex;flex-wrap:wrap;gap:7px;margin:28px 0}.meta span{font-size:.74rem;color:var(--wine);border:1px solid var(--line);padding:7px 12px;border-radius:30px}
+.poster{position:relative;background:#F1E8DD;min-height:540px}.poster img{object-fit:contain}.hero .cta{margin-top:6px}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--wine);color:#FFF9F2!important;border:1px solid var(--wine);padding:14px 24px;font-size:.87rem;font-weight:700;letter-spacing:.005em;transition:background .2s;min-height:48px}.cta:hover{background:#5A1420}
+.section{max-width:1130px;margin:auto;padding:77px 7vw 80px}.section h2{font-size:clamp(2.1rem,4.3vw,4rem);color:var(--wine);margin-bottom:20px;letter-spacing:-.035em}.section p{color:var(--muted)}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:28px}.principle{background:#F2E8DE;border:1px solid var(--line);padding:24px}.principle span{font-size:1.5rem;color:var(--wine)}.principle h3{font-size:clamp(1.3rem,2vw,1.7rem);margin:10px 0 8px;color:var(--wine)}.principle p{font-size:.87rem;line-height:1.66;margin:0}
+.booking{background:var(--beige);padding:85px 5vw}.bookingInner{max-width:1130px;margin:auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:8%;align-items:center}.bookingInfo h2{font-size:clamp(2.7rem,4.9vw,5.2rem);color:var(--wine);letter-spacing:-.045em}.bookingInfo p{font-size:.96rem;max-width:450px;color:var(--muted)}
+.bookingCard{background:#FFFBF5;border:1px solid var(--line);padding:34px 40px}.bookingCard h3{font-size:clamp(1.7rem,2.7vw,2.55rem);color:var(--wine);margin-bottom:10px}.rate{font:normal 3.5rem Georgia,serif;color:var(--wine);margin:0}.rateLabel{font-size:.85rem;color:var(--muted);margin:4px 0 22px}.detail{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid #e4d8cf;font-size:.9rem}.detail strong{min-width:85px;color:var(--wine)}.bookingCard .cta{display:flex;width:100%;margin-top:27px}.unavailable{margin-top:27px;background:#DED3C7;padding:16px 20px;text-align:center;color:#695356;font-weight:700;font-size:.88rem}.small{font-size:.79rem;line-height:1.7;color:var(--muted);margin:12px 0 0}.small a{color:var(--wine);text-decoration:underline;text-underline-offset:2px}
+.remark{background:var(--wine);color:#FFF7EE;text-align:center;padding:48px 6vw}.remark p{margin:0 auto;max-width:670px;font:italic clamp(1.2rem,2.4vw,2rem)/1.45 Georgia,serif}
+.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:27px 6vw;background:#4D1422;color:#FFF7EE;font-size:.73rem}.footer a:hover{text-decoration:underline}
+.policy{max-width:800px;margin:auto;padding:85px 7vw}.policy h1{color:var(--wine);font-size:clamp(2.55rem,5vw,4.8rem);margin-bottom:25px}.policy h2{color:var(--wine);font-size:1.85rem;margin:30px 0 8px}.policy p,.policy li{color:var(--muted);line-height:1.8}.policy a{text-decoration:underline;color:var(--wine)}
+@media(max-width:850px){.hero{grid-template-columns:1fr 1fr}.heroText{padding:64px 4vw}.bookingInner{gap:4%}}
+@media(max-width:720px){.hero,.bookingInner{grid-template-columns:1fr}.poster{min-height:410px}.heroText{padding:65px 7vw}.section{padding:63px 7vw}.principles{grid-template-columns:1fr}.booking{padding:65px 7vw}.bookingCard{padding:26px}.bookingInfo h2{font-size:2.75rem}.nav{flex-wrap:wrap}.ribbon{font-size:.56rem}}
