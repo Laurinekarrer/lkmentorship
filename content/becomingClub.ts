@@ -19,9 +19,9 @@ export const becomingClub = {
   sessions: {
     title: 'Becoming Sessions', subtitle: 'A little clarity. A little more of yourself.',
     text: 'Intimate guided circles with journaling, shared reflections and gentle body awareness. Inspired by Laurine’s Identity Alignment Workbook, each session offers a space to explore your identity, emotions, belonging and next steps.',
-    meta: ['Small circle · 4–6 women', '90 minutes', 'Introductory fee · €10 per session'],
-    nextLabel: 'First circle · Mon 26 October · 14:00–15:30',
-    venueLabel: 'Amsterdam · venue to be confirmed',
+    meta: ['Small circle · 4–6 women', '90 minutes', 'Waitlist open · no payment'],
+    nextLabel: 'New dates to be announced',
+    venueLabel: 'Becoming Sessions · currently on pause',
     /** Booking is handled on /community/becoming-sessions, not directly in this object. */
     stripePaymentUrl: '',
   },
@@ -37,6 +37,6 @@ export const becomingClub = {
     { question: 'Can I come alone?', answer: 'Of course. That’s exactly what this community is for. You’ll be welcomed into a small circle.' },
     { question: 'Who is the club for?', answer: 'Women in Amsterdam, especially those in their mid-twenties to early forties, including expats, travellers and locals. English is our shared language.' },
     { question: 'Is it a therapy group?', answer: 'No. Coffee gatherings are social, and Becoming Sessions are guided self-reflection workshops, not group psychotherapy. Personal sharing is always optional.' },
-    { question: 'How do I book?', answer: 'For CoCo 02, reserve your place through the Stripe checkout linked on /community/coco-02; a Meetup RSVP alone does not secure a seat. For guided Becoming Sessions, use /community/becoming-sessions.' },
+    { question: 'How do I book?', answer: 'For CoCo 02, reserve your place through the Stripe checkout linked on /community/coco-02; a Meetup RSVP alone does not secure a seat. For guided Becoming Sessions, join the waitlist on /community/becoming-sessions; bookings are paused.' },
   ],
 } as const;

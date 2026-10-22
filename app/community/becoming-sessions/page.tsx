@@ -2,23 +2,23 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
+import WaitlistForm from './WaitlistForm';
 import { becomingSessions as s } from '../../../content/becomingSessions';
 
 export const metadata: Metadata = {
   title: 'Becoming Sessions | The Becoming Club | Laurine Karrer Studio',
-  description: 'Five guided circles for women in Amsterdam: discover yourself, find balance, express, clarify and move. 90 minutes, €10 per session.',
+  description: 'Discover the five Becoming Sessions: guided circles for women in Amsterdam. Bookings are paused; join the waitlist for future dates.',
   alternates: { canonical: '/community/becoming-sessions' },
 };
 
 const { workshop: w } = s;
-const safeStripe = /^https:\/\/buy\.stripe\.com\//.test(w.stripePaymentUrl);
-// The venue can be announced after purchase; the date, time and city remain fixed.
-const canTakePayments = safeStripe && w.cancellationPolicy.trim().length > 0;
+// Bookings are paused. Keep the five-session programme and historic checkout
+// settings unchanged in content/becomingSessions.ts for future use.
 
 export default function BecomingSessionsPage() {
   return <main className={styles.page} id="top">
     <div className={styles.band}><span>THE BECOMING CLUB</span><span aria-hidden="true">✧</span><span>BY LAURINE KARRER STUDIO</span></div>
-    <div className={styles.top}><Link href="/community" className={styles.backToClub}>← Back to the Club</Link><nav aria-label="On this page"><a href="#connections">The concept</a><a href="#journey">Five sessions</a><a href="#first">26 October</a><a href="#reserve">Register</a></nav></div>
+    <div className={styles.top}><Link href="/community" className={styles.backToClub}>← Back to the Club</Link><nav aria-label="On this page"><a href="#connections">The concept</a><a href="#journey">Five sessions</a><a href="#first">First session</a><a href="#reserve">Waitlist</a></nav></div>
 
     <section className={styles.hero} aria-labelledby="sessions-title">
       <div className={styles.heroCopy}>
@@ -26,8 +26,9 @@ export default function BecomingSessionsPage() {
         <h1 id="sessions-title">Becoming <em>Sessions.</em></h1>
         <p className={styles.lead}>From self-discovery to <em>self-trust.</em></p>
         <p>Five small-group gatherings to reconnect with yourself, share with others and move forward with a little more clarity.</p>
-        <div className={styles.tags}><span>6 women</span><span>90 minutes</span><span>English</span><span>€10 / session</span></div>
-        <a className={styles.primary} href={canTakePayments ? w.stripePaymentUrl : "#reserve"} target={canTakePayments ? "_blank" : undefined} rel={canTakePayments ? "noopener noreferrer" : undefined}>Book my place · €{s.priceEuros} <span aria-hidden="true">↗</span></a>
+        <div className={styles.tags}><span>6 women</span><span>90 minutes</span><span>English</span><span>Next dates coming soon</span></div>
+        <a className={styles.primary} href="#reserve">Join the waitlist <span aria-hidden="true">↗</span></a>
+        <p style={{marginTop:'15px',fontSize:'.8rem'}}>Bookings are currently paused. Join the list to hear when new dates open.</p>
       </div>
       <div className={styles.heroArt}><Image src="/the-becoming-club/becoming-sessions.webp" alt="Becoming Sessions — The Becoming Club original artwork" fill priority sizes="(max-width: 780px) 100vw, 42vw" style={{objectFit:'contain'}} /></div>
     </section>
@@ -77,7 +78,7 @@ export default function BecomingSessionsPage() {
           <li>Journaling and conversation</li>
           <li>One insight to take into your week</li>
         </ul><p className={styles.stepsNote}>A welcoming, non-therapeutic group experience. No need to prepare or share anything personal.</p></div>
-        <aside className={styles.details}><span className={styles.kicker}>SESSION DETAILS</span><h3>{w.dateLabel}</h3><p>{w.timeLabel} · {w.city}</p><p>{w.venueLabel}</p><div className={styles.detailRule}/><p><strong>Circle</strong> · {w.capacity} women</p><p><strong>Language</strong> · English</p><p><strong>Introductory price</strong> · €{s.priceEuros} per session</p><a className={styles.primary} href={canTakePayments ? w.stripePaymentUrl : "#reserve"} target={canTakePayments ? "_blank" : undefined} rel={canTakePayments ? "noopener noreferrer" : undefined}>{canTakePayments ? "Book my place · €10" : "Booking information"} ↗</a></aside>
+        <aside className={styles.details}><span className={styles.kicker}>SESSION DETAILS</span><h3>New dates coming soon</h3><p>90 minutes · {w.city}</p><p>Venue and schedule to be announced</p><div className={styles.detailRule}/><p><strong>Circle</strong> · {w.capacity} women</p><p><strong>Language</strong> · English</p><p><strong>Bookings</strong> · Currently paused</p><a className={styles.primary} href="#reserve">Join the waitlist ↗</a></aside>
       </div>
     </section>
 
@@ -89,22 +90,14 @@ export default function BecomingSessionsPage() {
 
     <section className={styles.register} id="reserve" aria-labelledby="reserve-title">
       <div className={styles.registerIntro}>
-        <p className={styles.kicker}>SESSION 01 · SECURE BOOKING</p>
-        <h2 id="reserve-title">A place in <em>our circle.</em></h2>
-        <p>Six women. One thoughtful afternoon. A little clarity, connection and time for yourself.</p>
-        <p className={styles.price}><strong>€{s.priceEuros}</strong><span>one-time payment · 90 minutes</span></p>
-        <p className={styles.fine}><strong>Monday 26 October · 14:00–15:30 · Amsterdam</strong></p>
-        <p className={styles.fine}>The session takes place in Amsterdam. Exact venue details will be shared by email before the event.</p><p className={styles.fine}>€{s.priceEuros} reserves one seat in the guided circle. Drinks and food are not included and can be purchased separately at the venue.</p>
+        <p className={styles.kicker}>BECOMING SESSIONS · WAITLIST</p>
+        <h2 id="reserve-title">Be first to <em>know.</em></h2>
+        <p>The Becoming Sessions are taking a little pause while we prepare the next edition.</p>
+        <p>Our five-session journey is staying right here. Join the waitlist and I'll let you know when new dates become available in Amsterdam.</p>
+        <p className={styles.fine}>No payment, no obligation and no date to commit to yet.</p>
       </div>
       <div className={styles.formPanel}>
-        <h3>Reserve your spot ♡</h3>
-        <p className={styles.formIntro}>Six places only. €{s.priceEuros} reserves your spot in the circle; drinks and food are not included. Secure payment via Stripe, with no additional registration form.</p>
-        {canTakePayments ? <a className={styles.submit} href={w.stripePaymentUrl} target="_blank" rel="noopener noreferrer">Book my place · €{s.priceEuros} ↗</a> : <p>If the payment link is temporarily unavailable, please contact <a href="mailto:info.laurinekarrerstudio@gmail.com">info.laurinekarrerstudio@gmail.com</a> for details.</p>}
-        <p className={styles.formNote} style={{marginTop:'13px',fontSize:'.77rem'}}>
-          Before completing payment, please review our{' '}
-          <Link href="/community/becoming-sessions/cancellation-policy" target="_blank" rel="noopener noreferrer" style={{fontWeight:700,color:'#791625',textDecoration:'underline',textUnderlineOffset:'3px'}}>cancellation & refund policy ↗</Link>.
-        </p>
-        <p className={styles.formNote} style={{marginTop:'16px'}}>Payment confirmation is sent by Stripe. Laurine will share the exact Amsterdam venue by email before the event.</p>
+        <WaitlistForm />
       </div>
     </section>
 

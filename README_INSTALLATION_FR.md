@@ -1,38 +1,29 @@
-# CoCo 02 — lien Stripe intégré (22 octobre 2026)
+# Becoming Sessions — Pause + Waitlist (22 octobre 2026)
 
-## Mise à jour prête à importer
+## Ce que change ce correctif
+- Page `/community/becoming-sessions/` maintenue : identité graphique, 3 dimensions, 5 thèmes, contenu de l'atelier 01 et présentation de Laurine CONSERVÉS.
+- Toutes les incitations à payer 10 € remplacées par **Join the waitlist**.
+- Aucune date du 26 octobre ni tarif payant affichés pour les prochaines Sessions.
+- Petit formulaire prénom + e-mail + consentement pour les prochaines dates. Pas de paiement.
+- La page `/community/` annonce la pause et pointe vers la waitlist.
+- **CoCo 02 et son lien Stripe à partir de 2 € ne sont pas modifiés.**
 
-Le paiement Stripe officiel transmis a été intégré :
-`https://buy.stripe.com/3cI00l6SiaTH2GY8xs0kE02`
+## Installation GitHub
+Dans le dépôt `Laurinekarrer/lkmentorship`, branche `main`, uploader les fichiers du ZIP à la racine en conservant EXACTEMENT les sous-dossiers `app/`, `content/` et `public/`. Remplacer les fichiers existants demandés et ajouter le nouveau `WaitlistForm.tsx`. Ne pas uploader le ZIP entier comme une pièce jointe du dépôt.
 
-La page `/community/coco-02/` contient désormais un bouton actif **Book my spot · from €2**, qui ouvre directement ce lien dans un nouvel onglet. Le formulaire Meetup ne confirme pas la réservation ; le paiement Stripe est requis. Le lien vers la politique d'annulation apparaît sous le bouton. Le prix affiché est un minimum de 2 € ; les boissons et la nourriture sont à régler à part.
+Fichiers inclus :
+- `app/community/becoming-sessions/page.tsx` (remplacement)
+- `app/community/becoming-sessions/WaitlistForm.tsx` (nouveau)
+- `app/community/page.tsx` (remplacement)
+- `content/becomingClub.ts` (remplacement; correction précédente du `does not` conservée)
+- `public/__forms.html` (remplacement pour permettre la détection de la nouvelle waitlist par Netlify)
 
-## Installation GitHub (branche main)
+## Vérifications après déploiement
+1. Netlify → Deploys : dernier déploiement **Published**. En cas de `Failed`, ouvrir **Deploy log** et relever les lignes d'erreur, avant de modifier encore les fichiers.
+2. Site : `https://laurinekarrer.com/community/becoming-sessions/` ; vérifier « Join the waitlist » à tous les endroits et aucune incitation à payer 10 €.
+3. Netlify → Forms : vérifier que le formulaire **becoming-sessions-waitlist** est détecté et que la détection Netlify Forms est activée.
+4. Faire une soumission **avec ta propre adresse e-mail**, puis vérifier qu'elle apparaît dans **Forms → becoming-sessions-waitlist → Submissions**. Ne pas considérer la waitlist comme opérationnelle tant que ce test n'est pas concluant.
+5. Si le formulaire ne transmet pas la demande, le site affiche un lien mailto prérempli pour joindre la waitlist par e-mail.
+6. Vérifier que CoCo 02 et son paiement Stripe fonctionnent toujours.
 
-1. Extraire ce ZIP sur l'ordinateur.
-2. Déposer les dossiers `app/` et `content/` à la RACINE du dépôt `Laurinekarrer/lkmentorship`, en conservant l'arborescence exacte. Si GitHub propose de remplacer des fichiers existants, vérifier et valider les fichiers listés ci-dessous.
-3. Ne pas déposer le ZIP comme un seul fichier dans le dépôt.
-4. Laisser Netlify redéployer. Vérifier que le dernier déploiement est indiqué **Published**.
-5. Tester la page `https://laurinekarrer.com/community/coco-02/` : cliquer **Book my spot · from €2** et vérifier que la page de paiement affiche « CoCo 02 — Coffee & Connection » et permet une contribution minimale de 2 €. Ne pas effectuer un vrai paiement uniquement pour tester.
-6. Tester `https://laurinekarrer.com/community/coco-02/cancellation-policy/`.
-
-## Fichiers concernés
-
-- `content/coco02.ts`: lien Stripe activé, date et lieu EN ATTENTE DE CONFIRMATION.
-- `app/community/coco-02/page.tsx`: page de présentation/réservation, utilise la donnée de `content/coco02.ts`.
-- `app/community/coco-02/page.module.css`: mise en page identité The Becoming Club.
-- `app/community/coco-02/cancellation-policy/page.tsx`: conditions d'annulation.
-- `app/community/page.tsx`: accès à CoCo 02 depuis la page Community.
-- `content/becomingClub.ts`: détails CoCo 02 et FAQ sur les réservations par paiement.
-
-## IMPORTANT AVANT DE PARTAGER LE LIEN
-
-- La date **mercredi 4 novembre 2026, 14 h–15 h 30** est encore marquée « proposed » dans `content/coco02.ts` (`dateIsConfirmed: false`).
-- La table de **7 personnes à Café Belcampo** (six participantes plus Laurine) n'est pas confirmée : `locationIsConfirmed: false`. Ne passer ces flags à `true` qu'après confirmation réelle.
-- Vérifier dans Stripe que le lien est **actif**, que le minimum est **2 €**, que le paiement correspond à une seule place, et si possible que le nombre de paiements réussis est limité à **six**. Ces paramètres Stripe ne sont pas modifiés par le ZIP.
-- La page utilise le visuel déjà présent dans votre site : `public/the-becoming-club/coffee-connection.webp`.
-- La connexion GitHub permet la lecture mais pas l'écriture depuis ChatGPT : ce ZIP n'est pas encore publié.
-
-## Lien à partager immédiatement
-
-Pour les participantes, tant que le site n'est pas redéployé : `https://buy.stripe.com/3cI00l6SiaTH2GY8xs0kE02`
+**Attention hors site :** le lien Stripe 10 € de la session 01 existe encore dans le compte Stripe (non modifié par ce ZIP). Si tu souhaites suspendre intégralement la vente, désactive/archives aussi son lien dans Stripe, et actualise l'ancien événement Meetup du 26 octobre.
