@@ -1,29 +1,22 @@
-# Becoming Sessions — Pause + Waitlist (22 octobre 2026)
+# CoCo 03 — mise à jour complète pour le site existant
 
-## Ce que change ce correctif
-- Page `/community/becoming-sessions/` maintenue : identité graphique, 3 dimensions, 5 thèmes, contenu de l'atelier 01 et présentation de Laurine CONSERVÉS.
-- Toutes les incitations à payer 10 € remplacées par **Join the waitlist**.
-- Aucune date du 26 octobre ni tarif payant affichés pour les prochaines Sessions.
-- Petit formulaire prénom + e-mail + consentement pour les prochaines dates. Pas de paiement.
-- La page `/community/` annonce la pause et pointe vers la waitlist.
-- **CoCo 02 et son lien Stripe à partir de 2 € ne sont pas modifiés.**
+## Contenu
+- `content/coco03.ts` : événement du 11 novembre et NOUVEAU lien Stripe fourni.
+- `app/community/coco-03/page.tsx` : page automnale CoCo 03, bouton de paiement actif.
+- `app/community/coco-03/cancellation-policy/page.tsx` : conditions de réservation.
+- `app/community/page.tsx` et `content/becomingClub.ts` : liens et indications CoCo 03 actualisés sur la page Community.
 
-## Installation GitHub
-Dans le dépôt `Laurinekarrer/lkmentorship`, branche `main`, uploader les fichiers du ZIP à la racine en conservant EXACTEMENT les sous-dossiers `app/`, `content/` et `public/`. Remplacer les fichiers existants demandés et ajouter le nouveau `WaitlistForm.tsx`. Ne pas uploader le ZIP entier comme une pièce jointe du dépôt.
+Ce ZIP est une **mise à jour complète de CoCo 03 pour ton dépôt existant**, pas une copie de tout le site. Il préserve CoCo 02, Becoming Sessions et les styles existants.
 
-Fichiers inclus :
-- `app/community/becoming-sessions/page.tsx` (remplacement)
-- `app/community/becoming-sessions/WaitlistForm.tsx` (nouveau)
-- `app/community/page.tsx` (remplacement)
-- `content/becomingClub.ts` (remplacement; correction précédente du `does not` conservée)
-- `public/__forms.html` (remplacement pour permettre la détection de la nouvelle waitlist par Netlify)
+## Installer dans GitHub
+1. Décompresse ce ZIP.
+2. Ajoute ses dossiers `app` et `content` **à la racine du dépôt** `Laurinekarrer/lkmentorship`, en conservant les mêmes sous-dossiers.
+3. Accepte le remplacement des deux fichiers existants `app/community/page.tsx` et `content/becomingClub.ts`; les trois fichiers CoCo 03 sont nouveaux.
+4. Fais un commit. Attends le déploiement automatique Netlify, puis teste `https://laurinekarrer.com/community/coco-03/` et le bouton Stripe.
 
-## Vérifications après déploiement
-1. Netlify → Deploys : dernier déploiement **Published**. En cas de `Failed`, ouvrir **Deploy log** et relever les lignes d'erreur, avant de modifier encore les fichiers.
-2. Site : `https://laurinekarrer.com/community/becoming-sessions/` ; vérifier « Join the waitlist » à tous les endroits et aucune incitation à payer 10 €.
-3. Netlify → Forms : vérifier que le formulaire **becoming-sessions-waitlist** est détecté et que la détection Netlify Forms est activée.
-4. Faire une soumission **avec ta propre adresse e-mail**, puis vérifier qu'elle apparaît dans **Forms → becoming-sessions-waitlist → Submissions**. Ne pas considérer la waitlist comme opérationnelle tant que ce test n'est pas concluant.
-5. Si le formulaire ne transmet pas la demande, le site affiche un lien mailto prérempli pour joindre la waitlist par e-mail.
-6. Vérifier que CoCo 02 et son paiement Stripe fonctionnent toujours.
+## Avant d'accueillir des paiements
+- IMPORTANT : dans Stripe, vérifier que le lien `https://buy.stripe.com/cNi3cx5Oe2nb2GYeVQ0kE03` **cesse après sept paiements réussis** et ne permet pas de réserver plusieurs places sur un seul paiement. Le site ne peut pas imposer cette limite.
+- La table de groupe chez Groot Melkhuis n'est **pas encore confirmée** dans les informations dont je dispose : vérifie auprès du café, ou ajuste `content/coco03.ts` si tu changes de lieu.
+- Vérifie aussi la page de confirmation Stripe, le montant minimum de 2 €, et les règles de remboursement.
 
-**Attention hors site :** le lien Stripe 10 € de la session 01 existe encore dans le compte Stripe (non modifié par ce ZIP). Si tu souhaites suspendre intégralement la vente, désactive/archives aussi son lien dans Stripe, et actualise l'ancien événement Meetup du 26 octobre.
+Le ZIP utilise les ressources déjà présentes sur le site (image `public/the-becoming-club/coffee-connection.webp` et styles `app/community/coco-02/page.module.css`). Ne supprime pas ces fichiers.
