@@ -1,22 +1,32 @@
-# CoCo 03 — mise à jour complète pour le site existant
+# The Becoming Club — Stay Connected | Mise à jour guidelines
 
-## Contenu
-- `content/coco03.ts` : événement du 11 novembre et NOUVEAU lien Stripe fourni.
-- `app/community/coco-03/page.tsx` : page automnale CoCo 03, bouton de paiement actif.
-- `app/community/coco-03/cancellation-policy/page.tsx` : conditions de réservation.
-- `app/community/page.tsx` et `content/becomingClub.ts` : liens et indications CoCo 03 actualisés sur la page Community.
+## Installation sur GitHub
+1. Décompresse le ZIP.
+2. Dépose les dossiers `app/` et `content/` **à la racine** du dépôt `Laurinekarrer/lkmentorship`, en conservant leur arborescence.
+3. Confirme les nouveaux fichiers, puis attends le déploiement Netlify.
+4. Vérifie : https://laurinekarrer.com/community/connect
 
-Ce ZIP est une **mise à jour complète de CoCo 03 pour ton dépôt existant**, pas une copie de tout le site. Il préserve CoCo 02, Becoming Sessions et les styles existants.
+**À noter :** la page /community/connect n'est pas encore présente sur la branche principale GitHub au moment de préparer ce ZIP. Les trois fichiers inclus constituent donc la page complète, pas seulement un fragment à coller.
 
-## Installer dans GitHub
-1. Décompresse ce ZIP.
-2. Ajoute ses dossiers `app` et `content` **à la racine du dépôt** `Laurinekarrer/lkmentorship`, en conservant les mêmes sous-dossiers.
-3. Accepte le remplacement des deux fichiers existants `app/community/page.tsx` et `content/becomingClub.ts`; les trois fichiers CoCo 03 sont nouveaux.
-4. Fais un commit. Attends le déploiement automatique Netlify, puis teste `https://laurinekarrer.com/community/coco-03/` et le bouton Stripe.
+## Ce qui change
+Seule la section ouverte par « Read our guidelines » a été réécrite avec les cinq principes validés :
+- Come as you are. No performance needed.
+- Slow down & reconnect.
+- Different opinions, open minds.
+- Make room for every voice.
+- Connection over networking.
 
-## Avant d'accueillir des paiements
-- IMPORTANT : dans Stripe, vérifier que le lien `https://buy.stripe.com/cNi3cx5Oe2nb2GYeVQ0kE03` **cesse après sept paiements réussis** et ne permet pas de réserver plusieurs places sur un seul paiement. Le site ne peut pas imposer cette limite.
-- La table de groupe chez Groot Melkhuis n'est **pas encore confirmée** dans les informations dont je dispose : vérifie auprès du café, ou ajuste `content/coco03.ts` si tu changes de lieu.
-- Vérifie aussi la page de confirmation Stripe, le montant minimum de 2 €, et les règles de remboursement.
+**Le design, les quatre accès, les liens CoCo/Meetup/Studio, et la section de soutien restent inchangés.**
 
-Le ZIP utilise les ressources déjà présentes sur le site (image `public/the-becoming-club/coffee-connection.webp` et styles `app/community/coco-02/page.module.css`). Ne supprime pas ces fichiers.
+## QR code permanent
+Destination : https://laurinekarrer.com/community/connect
+- `QR_et_chevalet/QR_Stay_Connected_1800px.png` : QR haute définition, bordeaux sur crème.
+- `QR_et_chevalet/QR_Stay_Connected_Vector.svg` : QR vectoriel.
+- `QR_et_chevalet/The_Becoming_Club_A4_Foldable_Horizontal_Tent.pdf` : chevalet A4 pliable existant, deux faces horizontales (nom / QR).
+- `QR_et_chevalet/The_Becoming_Club_A5_Landscape_Two_Sides.pdf` : deux faces A5 horizontales.
+
+**Ne pas imprimer avant d'avoir vérifié que la page web est accessible publiquement.** Une fois publiée, l'adresse restera fixe d'un CoCo à l'autre.
+
+## Liens à mettre à jour plus tard
+Modifier seulement `content/becomingConnect.ts` pour changer le dernier CoCo et le prochain CoCo.
+`supportPaymentUrl` reste volontairement vide : ne pas réutiliser le lien de réservation Stripe CoCo 03 pour une contribution libre. The Becoming Club n'est pas présenté comme une association caritative enregistrée.
