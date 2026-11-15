@@ -13,7 +13,7 @@ export default function Booking(){
     <section className="page-head shell booking-head">
       <p className="eyebrow">Book &amp; Shop</p>
       <h1>Choose what supports you.</h1>
-      <p>Book an in-person or online experience, or discover practices designed to accompany you beyond the session.</p>
+      <p>Choose and pay for your massage, share the days and times that suit you, and receive your appointment confirmation directly from Laurine.</p>
     </section>
     <div className="shell commerce-shell"><BookShopTabs/></div>
     <section className="section booking-contact-section">

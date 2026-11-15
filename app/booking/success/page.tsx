@@ -1,0 +1,5 @@
+import Link from 'next/link';
+
+export const metadata={title:'Massage request received',robots:{index:false,follow:false}};
+
+export default function BookingSuccess(){return <section className="section"><div className="shell" style={{maxWidth:850,textAlign:'center'}}><p className="eyebrow">Payment confirmed</p><h1 style={{fontSize:'clamp(3.4rem,8vw,7rem)'}}>Your massage request is received.</h1><p style={{maxWidth:650,margin:'0 auto 20px'}}>Thank you. Your payment is confirmed and your preferred availability has been sent to Laurine. She will contact you personally to confirm both your final appointment time and exact location.</p><p><strong>Current massage address:</strong> Papaverhof 71C, 1032 LX Amsterdam · 5th floor · rooftop.<br/><small>Please check Laurine&apos;s confirmation before travelling, as sessions may take place across different wellness partner spaces.</small></p><div className="buttons" style={{justifyContent:'center'}}><Link className="btn primary" href="/">Return home</Link><Link className="btn" href="/booking#shop">Visit the shop</Link></div></div></section>}

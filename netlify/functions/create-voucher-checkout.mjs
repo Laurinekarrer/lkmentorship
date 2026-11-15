@@ -47,6 +47,7 @@ export async function handler(event){
     params.set('line_items[0][price_data][product_data][name]',name);
     params.set('line_items[0][price_data][product_data][description]',`Personalised for ${recipientName}, from ${senderName}`);
     params.set('line_items[0][quantity]','1');
+    params.set('metadata[checkout_type]','gift_voucher');
     params.set('metadata[voucher_type]',data.offerId);
     params.set('metadata[voucher_name]',name);
     params.set('metadata[recipient_name]',recipientName);

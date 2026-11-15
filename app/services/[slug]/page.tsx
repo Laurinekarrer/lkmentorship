@@ -3,7 +3,7 @@ import type {Metadata} from 'next';
 
 const studioMapUrl='https://www.google.com/maps/search/?api=1&query=Hazenstraat+53%2C+1016+SN+Amsterdam';
 const seo:Record<string,{title:string;description:string}>={
-  massage:{title:'Therapeutic & Ritual Massage Amsterdam | Stress Relief',description:'Body Ritual and Face Ritual Massage in central Amsterdam for deep relaxation, physical tension, nervous-system downshifting and mind-body reconnection.'},
+  massage:{title:'Therapeutic & Ritual Massage Amsterdam | Stress Relief',description:'Body Ritual and Face Ritual Massage in Amsterdam for deep relaxation, physical tension, nervous-system downshifting and mind-body reconnection.'},
   'one-to-one':{title:'Sophrology Amsterdam | Stress & Emotional Regulation',description:'Personalised sophrology in Amsterdam or online with certified sophrologist Laurine Karrer for stress, emotional regulation, overthinking, sleep and body awareness.'},
   classes:{title:'Breathwork & Body Awareness Classes Amsterdam',description:'Sophrology-inspired breathwork, nervous-system regulation, dynamic relaxation, body awareness and gentle stretching classes in Amsterdam.'}
 };

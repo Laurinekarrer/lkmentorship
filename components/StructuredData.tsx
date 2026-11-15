@@ -21,7 +21,6 @@ export function StructuredData(){
         name:'Laurine Karrer Studio',alternateName:'Laurine Karrer — Sophrologist in Amsterdam',url:siteUrl,
         description:'Sophrology, therapeutic and ritual massage, body awareness and breathwork in Amsterdam and online.',
         founder:{'@id':`${siteUrl}/#person`},
-        address:{'@type':'PostalAddress',streetAddress:'Hazenstraat 53',postalCode:'1016 SN',addressLocality:'Amsterdam',addressCountry:'NL'},
         areaServed:{'@type':'City',name:'Amsterdam'},
         availableLanguage:['English','French'],
         sameAs:['https://www.instagram.com/laurine.karrer/','https://www.google.com/maps/place/Laurine+Karrer+Studio/@52.3699801,4.8804849,17z/data=!4m8!3m7!1s0x47c609d42f56af83:0x155fb79bbf59f6fe!8m2!3d52.3699801!4d4.8804849!9m1!1b1!16s%2Fg%2F11zyml_wxh'],
