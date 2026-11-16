@@ -1,11 +1,11 @@
 import type {Metadata} from 'next';
-import {partners} from '@/content/site';
+import {config,partners} from '@/content/site';
 
 export const metadata:Metadata={title:'Sophrology & Wellness Partners in Amsterdam',description:'Find the Amsterdam spaces where Laurine Karrer Studio offers massage, breathwork and baby spa support.',alternates:{canonical:'/partners'}};
 
 export default function Partners(){return <>
   <section className="page-head shell">
-    <p className="eyebrow">Collaborations</p>
+    <p className="eyebrow">Partnerships</p>
     <h1>Where we meet.</h1>
     <p>Selected Amsterdam spaces where I currently offer Laurine Karrer Studio experiences.</p>
   </section>
@@ -22,7 +22,7 @@ export default function Partners(){return <>
   </section>
 
   <section className="section partnership-invite"><div className="shell partnership-invite-inner">
-    <div><p className="eyebrow">Collaborate with Laurine Karrer Studio</p><h2>Bring a grounded wellbeing experience into your space.</h2></div>
-    <div><p>Body Rituals, sophrology, breathwork and workshops for studios, retreats and events.</p><a className="btn primary" href="mailto:info.lkmentorship@gmail.com?subject=Collaboration enquiry">Start a conversation</a></div>
+    <div><p className="eyebrow">Partner with Laurine Karrer Studio</p><h2>Bring a grounded wellbeing experience into your space.</h2></div>
+    <div><p>Body Rituals, sophrology, breathwork and workshops for studios, retreats and events.</p><a className="btn primary" href={`mailto:${config.email}?subject=Partnership enquiry`}>Start a conversation</a></div>
   </div></section>
 </>}
