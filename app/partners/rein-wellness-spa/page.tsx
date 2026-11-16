@@ -21,7 +21,7 @@ export default function ReinWellnessSpa(){return <>
     <div className="shell details">
       <div><p className="eyebrow">What I offer here</p><h2>Awareness from the earliest moments.</h2></div>
       <div className="partner-offers">
-        <h3>Body Awareness Classes</h3><p>Gentle classes exploring sensation, breath, movement and a more conscious relationship with the body.</p>
+        <h3>Body Awareness Workshops</h3><p>Gentle group experiences exploring sensation, breath, movement and a more conscious relationship with the body.</p>
         <h3>Baby Spa & Float Support</h3><p>A calm and attentive presence supporting parents and babies throughout the baby-spa and floating experience, always following the baby’s signals and the venue’s protocols.</p>
         <h3>Baby Massage</h3><p>Nurturing touch practices designed to support relaxation, bonding and a deeper understanding of your baby’s non-verbal cues.</p>
         <CTA>Book at Rein</CTA>

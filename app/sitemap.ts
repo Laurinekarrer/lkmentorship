@@ -1,2 +1,2 @@
 import type {MetadataRoute} from 'next';
-export default function sitemap():MetadataRoute.Sitemap{const base='https://laurinekarrer.com';return ['','/sophrologist-amsterdam','/services','/services/massage','/services/one-to-one','/services/classes','/community','/workshops','/partners','/gift-voucher','/booking'].map(route=>({url:base+route,lastModified:new Date()}))}
+export default function sitemap():MetadataRoute.Sitemap{const base='https://laurinekarrer.com';return ['','/sophrologist-amsterdam','/services','/services/massage','/services/one-to-one','/services/classes','/community','/workshops','/partners','/gift-voucher','/booking','/cancellation-policy'].map(route=>({url:base+route,lastModified:new Date()}))}

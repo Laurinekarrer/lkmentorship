@@ -21,7 +21,8 @@ const massage:Testimonial[]=[
   ,{quote:'From the moment we met, I felt at ease. Laurine creates a welcoming, calm atmosphere and brings genuine care to her work. I left relaxed, recharged and much more balanced.',name:'Private client',kind:'Massage'}
   ,{quote:'The facial and holistic massage were both marvellous. Laurine’s gentle touch allowed me to enter deep relaxation, and her passion shows in her energy and attentiveness.',name:'Private client',kind:'Face ritual massage'}
   ,{quote:'I felt every part of my body relax and reached a feeling of total peace. The session was professional, deeply restorative and gave me real time for myself.',name:'Mystery Barragan',kind:'Full body massage'}
-  ,{quote:'Laurine knows what she is doing. She creates a safe space to fully surrender to the moment. I felt deeply relaxed after the session and could still feel that relaxation throughout my body the next day.',name:'Louise Cecilia ten Pas',kind:'Google Review · Massage'}
+  ,{quote:'Laurine knows what she is doing. She creates a safe space to fully surrender to the moment. The attention she has for you is held with love and there is no rush at all. My whole being felt deeply relaxed, and I could still feel that relaxation throughout my body the next day.',name:'Louise Cecilia ten Pas',kind:'Google Review · Body ritual'}
+  ,{quote:'A wonderful experience from start to finish. Laurine brings care and attention to every detail, creating a beautiful, peaceful space. I left the full-body ritual feeling deeply relaxed and re-energised—as if wrapped in a warm, comforting cocoon.',name:'Private client',kind:'Google Review · Body ritual'}
   ,{quote:'Best massage experience ever. I have already had a couple of sessions with Laurine and cannot wait to book the next. Her touch is gentle and powerful—it is not just a treatment, it is a beautiful ritual.',name:'Dubi Charytan',kind:'Google Review · Massage'}
   ,{quote:'Amazing experience! Top quality treatment.',name:'Pieter Olierook',kind:'Google Review · Massage'}
   ,{quote:'Laurine takes the time to understand your body, and you can feel how much knowledge and care she puts into her work. I felt completely relaxed and comfortable, and afterwards my body felt incredible.',name:'Stephan Haak',kind:'Google Review · Massage'}
@@ -38,16 +39,17 @@ const oneToOne:Testimonial[]=[
 ];
 
 const classes:Testimonial[]=[
-  {quote:'It was my first time trying meditation and I found it an amazing experience. I felt energised and stronger, both physically and spiritually.',name:'Luke',kind:'Class participant'},
-  {quote:'Laurine is a very kind and encouraging teacher. Her classes and challenges helped me achieve more than I hoped.',name:'Private client',kind:'Class participant'},
-  {quote:'You received me with open arms and taught me everything I know. I always looked forward to the next class.',name:'Private client',kind:'Class participant'},
+  {quote:'It was my first time trying meditation and I found it an amazing experience. I felt energised and stronger, both physically and spiritually.',name:'Luke',kind:'Workshop participant'},
+  {quote:'Laurine is a very kind and encouraging teacher. Her guidance and challenges helped me achieve more than I hoped.',name:'Private client',kind:'Workshop participant'},
+  {quote:'You received me with open arms and taught me everything I know. I always looked forward to the next session.',name:'Private client',kind:'Workshop participant'},
   {quote:'I arrived with low energy and left feeling peaceful, energised and more connected to myself. I will definitely come back.',name:'Private client',kind:'Guided practice'},
-  {quote:'The group energy felt powerful and supportive. Even as a beginner, I felt guided through the experience and stronger afterwards.',name:'Private client',kind:'Breath & movement class'},
-  {quote:'Laurine creates a warm space where there is no pressure to perform. The simple movements helped me feel more present in my body.',name:'Private client',kind:'Body awareness class'}
+  {quote:'The group energy felt powerful and supportive. Even as a beginner, I felt guided through the experience and stronger afterwards.',name:'Private client',kind:'Breathwork workshop'},
+  {quote:'Laurine creates a warm space where there is no pressure to perform. The simple movements helped me feel more present in my body.',name:'Private client',kind:'Body-awareness workshop'}
 ];
 
 export function Testimonials(){
   const pathname=usePathname();
+  const hidden=pathname.startsWith('/booking')||pathname.startsWith('/contact')||pathname.startsWith('/gift-voucher')||pathname.startsWith('/cancellation-policy');
   const items=useMemo(()=>{
     if(pathname.includes('/services/massage')) return massage;
     if(pathname.includes('/services/one-to-one')) return oneToOne;
@@ -64,9 +66,11 @@ export function Testimonials(){
   const next=()=>setIndex(value=>(value+1)%items.length);
   const item=items[index];
 
+  if(hidden) return null;
+
   return <section className="testimonials" aria-labelledby="testimonials-title">
     <div className="shell testimonials-shell">
-      <div className="testimonials-label"><div><p className="eyebrow">Testimonials</p><a className="google-review-link" href={config.googleBusiness} target="_blank" rel="noreferrer"><strong>5.0 ★</strong><span>5 Google reviews ↗</span></a></div><h2 id="testimonials-title">What they felt.</h2></div>
+      <div className="testimonials-label"><div><p className="eyebrow">Testimonials</p><a className="google-review-link" href={config.googleBusiness} target="_blank" rel="noreferrer"><strong>5.0 ★</strong><span>Read Google reviews ↗</span></a></div><h2 id="testimonials-title">What they felt.</h2></div>
       <div className="testimonial-slider" aria-live="polite">
         <figure className="testimonial-slide" key={`${pathname}-${index}`}>
           <blockquote>“{item.quote}”</blockquote>

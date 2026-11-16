@@ -1,11 +1,10 @@
 import {notFound} from 'next/navigation';import {services} from '@/content/site';import {CTA} from '@/components/Site';
 import type {Metadata} from 'next';
 
-const studioMapUrl='https://www.google.com/maps/search/?api=1&query=Hazenstraat+53%2C+1016+SN+Amsterdam';
 const seo:Record<string,{title:string;description:string}>={
   massage:{title:'Therapeutic & Ritual Massage Amsterdam | Stress Relief',description:'Body Ritual and Face Ritual Massage in Amsterdam for deep relaxation, physical tension, nervous-system downshifting and mind-body reconnection.'},
   'one-to-one':{title:'Sophrology Amsterdam | Stress & Emotional Regulation',description:'Personalised sophrology in Amsterdam or online with certified sophrologist Laurine Karrer for stress, emotional regulation, overthinking, sleep and body awareness.'},
-  classes:{title:'Breathwork & Body Awareness Classes Amsterdam',description:'Sophrology-inspired breathwork, nervous-system regulation, dynamic relaxation, body awareness and gentle stretching classes in Amsterdam.'}
+  classes:{title:'Breathwork & Body Awareness Workshops Amsterdam',description:'Sophrology-inspired breathwork, nervous-system regulation and body-awareness workshops in Amsterdam.'}
 };
 export function generateMetadata({params}:{params:{slug:string}}):Metadata{const item=seo[params.slug];if(!item)return{};return{...item,alternates:{canonical:`/services/${params.slug}`},openGraph:{title:item.title,description:item.description,url:`/services/${params.slug}`}}}
 
@@ -20,7 +19,7 @@ const expectations:Record<string,string[]>={
   ],
   classes:[
     'Wear comfortable clothing you can move and breathe in, and bring a water bottle. Bare feet or socks are recommended so you can stay connected to sensation and move freely.',
-    'No previous experience is needed. Simply bring your body as it is and allow yourself to explore at your own rhythm, with rest and adaptations always available. Please share any pregnancy, injury, medical condition or movement contraindication before class.'
+    'No previous experience is needed. Simply bring your body as it is and explore at your own rhythm. Please share any pregnancy, injury, medical condition or movement contraindication beforehand.'
   ]
 };
 
@@ -85,7 +84,7 @@ const oneToOneFaqs=[
 const classesFaqs:FaqItem[]=[
   {
     question:'Do I need previous experience?',
-    answer:'No. Body awareness and breathwork classes are accessible to beginners. Each practice is explained progressively, with options to pause, rest or adapt the movement. The intention is not performance; it is learning to notice sensation, breath and your own rhythm.'
+    answer:'No. Body-awareness and breathwork workshops are accessible to beginners. Each practice is explained progressively, with options to pause, rest or adapt.'
   },
   {
     question:'What is the difference between Body Awareness & Gentle Stretching and Sophrology Breathwork?',
@@ -96,15 +95,15 @@ const classesFaqs:FaqItem[]=[
     answer:'You will be guided through arrival, accessible practices and a closing moment for integration. You may leave feeling calmer, more energised, emotionally open, physically grounded or simply more aware of yourself. Responses vary, so hydrate, rest if needed and let the experience settle without forcing a particular result.'
   },
   {
-    question:'Who are the classes for?',
+    question:'Who are these workshops for?',
     answer:'They may support people who feel stressed, disconnected, mentally overloaded, tense, low in energy or curious about building a safer and more conscious relationship with their body. They can also be useful if you want practical tools for breathing, presence, sleep preparation, emotional regulation or embodied self-confidence.'
   },
   {
     question:'Are there any precautions or contraindications?',
-    answer:'Please tell me before class about pregnancy, recent surgery, injury, cardiovascular or respiratory concerns, epilepsy, acute pain, dizziness, panic symptoms or any condition affected by movement or breathing practices. Breath and movement are always adapted, and you remain free to pause at any time. Classes do not replace medical or psychological care.'
+    answer:'Please tell me beforehand about pregnancy, recent surgery, injury, cardiovascular or respiratory concerns, epilepsy, acute pain, dizziness, panic symptoms or any condition affected by movement or breathing. Practices can be adapted and do not replace medical or psychological care.'
   }
 ];
 
 const faqsByService:Record<string,FaqItem[]>={massage:bodyCareFaqs,'one-to-one':oneToOneFaqs,classes:classesFaqs};
 
-export function generateStaticParams(){return services.map(s=>({slug:s.slug}))}export default function ServicePage({params}:{params:{slug:string}}){const s=services.find(x=>x.slug===params.slug);if(!s)notFound();const whatToExpect=expectations[s.slug]??expectations['one-to-one'];const serviceFaqs=faqsByService[s.slug]??[];return <><section className="page-head shell"><p className="eyebrow">Services · {s.number}</p><h1>{s.title}</h1><p>{s.description}</p></section><section className="section shell"><div className="cards">{s.items.map((item,i)=><article className="card" key={item.name}><p className="eyebrow">0{i+1}</p><h3>{item.name}</h3><p>{item.text}</p>{'price' in item&&item.price?<div className="service-meta">{'options' in item&&Array.isArray(item.options)?<div className="service-options">{item.options.map(option=><p key={option}>{option}</p>)}</div>:<p className="service-price">{'duration' in item&&item.duration?`${item.duration} · `:''}{item.price}</p>}{'location' in item&&item.location?<small>{item.location.includes('Hazenstraat 53')?<><a className="location-link" href={studioMapUrl} target="_blank" rel="noreferrer">Hazenstraat 53, 1016 SN Amsterdam ↗</a>{item.location.includes('Online')&&' · Online'}</>:item.location}</small>:<small>Location — to be confirmed</small>}</div>:<p><small>Duration · Price · Location — to be confirmed</small></p>}<CTA/></article>)}</div></section>{serviceFaqs.length>0&&<section className="section faq-section"><div className="shell faq-shell"><p className="eyebrow">{s.title}</p><h2>Frequently asked questions.</h2><div className="faq-list">{serviceFaqs.map(item=><details className="faq-item" key={item.question}><summary><span>{item.question}</span><span className="faq-plus" aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div></div></section>}<section className="section approach"><div className="shell details"><div><p className="eyebrow">What to expect</p><h2>A space adapted to you.</h2></div><div><p>{sharedExpectation}</p>{whatToExpect.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</div></div></section></>}
+export function generateStaticParams(){return services.map(s=>({slug:s.slug}))}export default function ServicePage({params}:{params:{slug:string}}){const s=services.find(x=>x.slug===params.slug);if(!s)notFound();const whatToExpect=expectations[s.slug]??expectations['one-to-one'];const serviceFaqs=faqsByService[s.slug]??[];return <><section className="page-head shell"><p className="eyebrow">Services · {s.number}</p><h1>{s.title}</h1><p>{s.description}</p></section><section className="section shell"><div className="cards">{s.items.map((item,i)=><article className="card" key={item.name}><p className="eyebrow">0{i+1}</p><h3>{item.name}</h3><p>{item.text}</p>{'price' in item&&item.price?<div className="service-meta">{'options' in item&&Array.isArray(item.options)?<div className="service-options">{item.options.map(option=><p key={option}>{option}</p>)}</div>:<p className="service-price">{'duration' in item&&item.duration?`${item.duration} · `:''}{item.price}</p>}{'location' in item&&item.location?<small>{item.location}</small>:<small>Location — to be confirmed</small>}</div>:<p><small>Duration · Price · Location — to be confirmed</small></p>}<CTA/></article>)}</div></section>{serviceFaqs.length>0&&<section className="section faq-section"><div className="shell faq-shell"><p className="eyebrow">{s.title}</p><h2>Frequently asked questions.</h2><div className="faq-list">{serviceFaqs.map(item=><details className="faq-item" key={item.question}><summary><span>{item.question}</span><span className="faq-plus" aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div></div></section>}<section className="section approach"><div className="shell details"><div><p className="eyebrow">What to expect</p><h2>A space adapted to you.</h2></div><div><p>{sharedExpectation}</p>{whatToExpect.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</div></div></section></>}

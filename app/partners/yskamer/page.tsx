@@ -27,9 +27,9 @@ export default function Yskamer(){return <>
     <div className="shell details">
       <div><p className="eyebrow">What I offer here</p><h2>Breath, regulation and rest.</h2></div>
       <div className="partner-offers">
-        <h3>Beginner Breathwork</h3><p>Accessible classes and private sessions to discover conscious breathing, reconnect with your body and build safe foundations.</p>
-        <h3>Breathwork Progression</h3><p>Classes and private sessions for those ready to deepen breath awareness, regulation and practice.</p>
-        <h3>Sleep Improvement</h3><p>Classes and private sessions combining breath, relaxation and practical tools to prepare the body and mind for more restorative sleep.</p>
+        <h3>Beginner Breathwork</h3><p>Accessible workshops and private sessions to discover conscious breathing, reconnect with your body and build safe foundations.</p>
+        <h3>Breathwork Progression</h3><p>Workshops and private sessions for those ready to deepen breath awareness, regulation and practice.</p>
+        <h3>Sleep Improvement</h3><p>Workshops and private sessions combining breath, relaxation and practical tools to prepare the body and mind for more restorative sleep.</p>
         <CTA>Book at Yskamer</CTA>
       </div>
     </div>
