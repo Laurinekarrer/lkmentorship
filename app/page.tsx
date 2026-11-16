@@ -11,7 +11,7 @@ export default function Home() {
       <div className="hero-copy">
         <h1>Come back to your body.</h1>
         <p className="hero-statement">Find clarity. Move from self-trust.</p>
-        <p>Body rituals, identity sessions, breathwork and workshops in Amsterdam.</p>
+        <p>Body rituals, identity sessions and workshops in Amsterdam.</p>
         <div className="buttons"><Link className="btn primary" href="/booking">Book a session</Link><Link className="btn" href="/services">Explore services</Link></div>
       </div>
       <div className="photo hero-photo">
