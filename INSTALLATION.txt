@@ -1,0 +1,14 @@
+THE RITUAL CONTINUES — LAURINE KARRER STUDIO
+
+1. Décompresse ce ZIP. Dans le dépôt GitHub Laurinekarrer/lkmentorship,
+   ajoute les dossiers app et public en conservant les chemins des fichiers.
+   Fusionne ces dossiers avec les dossiers existants.
+2. Après le déploiement Netlify, ouvre
+   https://laurinekarrer.com/ritual-continues
+   sur ton téléphone et lance la lecture.
+3. Ajoute The-Ritual-Continues-QR.png au dos de ta carte Canva.
+   Garde la marge blanche du QR code et scanne un exemplaire avant impression.
+
+Le PNG et ce fichier sont destinés à la préparation de la carte.
+La page est hors du menu et demande aux moteurs de ne pas l’indexer.
+Toute personne qui a le lien peut l’ouvrir.
