@@ -1,18 +1,14 @@
-# CoCo #4 — Mise à jour du site Laurine Karrer Studio
+# CoCo 04 — correction de la carte sur Community
 
-Date : mercredi 25 novembre 2026, 14h–15h30
-Lieu : De Roos, Amsterdam
-Capacité : 7 participantes + Laurine
-Contribution : à partir de 2 €
-Stripe : https://buy.stripe.com/00w9AVfoO4vj0yQcNI0kE05
+La capture affichait toujours CoCo 03 parce que la carte dépend aussi de `content/becomingClub.ts` et de `app/community/page.tsx`.
 
-## Installation (sans changer le reste du site)
+## Installation
+1. Décompresser ce ZIP dans le dossier racine de ton projet Next.js (celui qui contient `package.json`), en conservant l'arborescence `app/` et `content/`.
+2. Lancer `python apply_coco04.py` à la racine du projet. Cela actualise la carte Coffee & Connection, le lien interne vers CoCo 04 et ajoute le lien du **groupe Meetup** dans la description.
+3. Redéployer sur Netlify.
 
-1. Décompresse ce ZIP.
-2. Copie les dossiers `app` et `content` **ainsi que** le fichier `apply_coco04.py` à la racine de ton projet `lkmentorship` existant. Fusionne les dossiers : ne supprime aucun dossier existant.
-3. À la racine de ce projet, exécute `python apply_coco04.py` (Windows : `py apply_coco04.py` si besoin). Le script met à jour le bloc du prochain événement et les liens sur la page Community. Il ne touche pas aux autres sections.
-4. Vérifie `/community` puis `/community/coco-04`, et publie via ton flux GitHub/Netlify habituel. `npm run build` peut être utilisé pour vérifier la compilation.
+Le bouton « Discover CoCo 04 & book » mène à `/community/coco-04`, où le bouton « Book my place » mène à Stripe : https://buy.stripe.com/00w9AVfoO4vj0yQcNI0kE05
 
-Les fichiers de CoCo #3 restent intacts et consultables en archive. La nouvelle page reprend la feuille CSS et l’image existantes : elle n’a pas besoin de nouveaux visuels.
+Le lien du groupe Meetup utilisé est : https://www.meetup.com/the-becoming-club-women-in-amsterdam/ . Le lien direct vers l'événement Meetup spécifique n'a pas été fourni et ne peut pas être inventé.
 
-**Important :** Le ZIP seul ne publie pas le site. Le paiement Stripe doit être limité à 7 réservations côté Stripe; le site ne peut pas garantir ce plafond. La disponibilité des places chez De Roos doit être confirmée.
+Les autres parties du site sont conservées.
