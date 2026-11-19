@@ -1,14 +1,21 @@
-# CoCo 04 — correction de la carte sur Community
+# CoCo 04 — FINAL website update (no script needed)
 
-La capture affichait toujours CoCo 03 parce que la carte dépend aussi de `content/becomingClub.ts` et de `app/community/page.tsx`.
+## What this ZIP does
+- Replaces the old CoCo 03 card on `/community#gatherings` with **CoCo 04 — Wednesday 25 November, 14:00–15:30, De Roos**.
+- Changes the card button to **Discover CoCo 04 & book** → `/community/coco-04`.
+- Adds the dedicated CoCo 04 Stripe payment link on the event page: https://buy.stripe.com/00w9AVfoO4vj0yQcNI0kE05
+- Leaves other Community sections and old event pages unchanged.
 
-## Installation
-1. Décompresser ce ZIP dans le dossier racine de ton projet Next.js (celui qui contient `package.json`), en conservant l'arborescence `app/` et `content/`.
-2. Lancer `python apply_coco04.py` à la racine du projet. Cela actualise la carte Coffee & Connection, le lien interne vers CoCo 04 et ajoute le lien du **groupe Meetup** dans la description.
-3. Redéployer sur Netlify.
+## Install in GitHub
+1. Unzip this file on your computer.
+2. Open the `Laurinekarrer/lkmentorship` repository on GitHub, on the branch Netlify deploys.
+3. Replace/upload the 5 files below **at exactly these paths** (merge folders, do not delete anything):
+   - `content/becomingClub.ts` **IMPORTANT: corrects date, venue and FAQs**
+   - `app/community/page.tsx` **IMPORTANT: changes the card and button**
+   - `content/coco04.ts` (new event configuration)
+   - `app/community/coco-04/page.tsx` (event and Stripe booking)
+   - `app/community/coco-04/cancellation-policy/page.tsx` (booking policy)
+4. Click **Commit changes** in GitHub. Do not upload the ZIP itself into the repository; upload the actual files inside it.
+5. Open Netlify > Deploys, wait for the latest commit to show **Published**, then refresh `https://laurinekarrer.com/community#gatherings` (Ctrl+Shift+R).
 
-Le bouton « Discover CoCo 04 & book » mène à `/community/coco-04`, où le bouton « Book my place » mène à Stripe : https://buy.stripe.com/00w9AVfoO4vj0yQcNI0kE05
-
-Le lien du groupe Meetup utilisé est : https://www.meetup.com/the-becoming-club-women-in-amsterdam/ . Le lien direct vers l'événement Meetup spécifique n'a pas été fourni et ne peut pas être inventé.
-
-Les autres parties du site sont conservées.
+**Important:** The Meetup link currently leads to the group's page, because no CoCo 04-specific Meetup URL was provided. The booking button leads to the CoCo 04 page with the supplied Stripe link. The website does not control Stripe inventory: set a limit of 7 paid reservations in Stripe. Group seating at De Roos remains to be confirmed.

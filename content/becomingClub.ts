@@ -1,4 +1,4 @@
-/** The Becoming Club. CoCo 03 is the current event; earlier CoCos remain accessible in their own routes. */
+/** The Becoming Club. CoCo 04 is the current event; earlier CoCos remain accessible in their own routes. */
 export const becomingClub = {
   meetupGroupUrl: 'https://www.meetup.com/the-becoming-club-women-in-amsterdam/',
   instagramUrl: 'https://www.instagram.com/laurine.karrer/',
@@ -11,8 +11,8 @@ export const becomingClub = {
     title: 'Coffee & Connection', subtitle: 'Come for the coffee. Stay for the connection.',
     text: 'An intimate afternoon to meet new women, explore beautiful cafés around Amsterdam and enjoy honest conversations in a relaxed setting. Come alone — you will not be the only one.',
     meta: ['7 guests + Laurine', '90 minutes', 'Reservation contribution · from €2', 'Drinks purchased separately'],
-    nextLabel: 'CoCo 03 · Wed 11 November · 14:00–15:30',
-    venueLabel: 'Groot Melkhuis · Vondelpark, Amsterdam (group table pending confirmation)',
+    nextLabel: 'CoCo 04 · Wed 25 November · 14:00–15:30',
+    venueLabel: 'De Roos · Pieter Cornelisz Hooftstraat 183, Amsterdam (group seating pending confirmation)',
     eventUrl: '',
   },
   sessions: {
@@ -35,6 +35,6 @@ export const becomingClub = {
     { question: 'Can I come alone?', answer: 'Of course. That’s exactly what this community is for. You’ll be welcomed into a small circle.' },
     { question: 'Who is the club for?', answer: 'Women in Amsterdam, especially those in their mid-twenties to early forties, including expats, travellers and locals. English is our shared language.' },
     { question: 'Is it a therapy group?', answer: 'No. Coffee gatherings are social, and Becoming Sessions are guided self-reflection workshops, not group psychotherapy. Personal sharing is always optional.' },
-    { question: 'How do I book?', answer: 'For CoCo 03, reserve your place through the Stripe checkout linked on /community/coco-03; a Meetup RSVP alone does not secure a seat. There are seven paying guest places, and the café table is pending confirmation. For guided Becoming Sessions, join the waitlist; bookings are paused.' },
+    { question: 'How do I book?', answer: 'For CoCo 04, reserve your place through the Stripe checkout linked on /community/coco-04; a Meetup RSVP alone does not secure a seat. There are seven guest places, and group seating at De Roos is pending confirmation. For guided Becoming Sessions, join the waitlist; bookings are paused.' },
   ],
 } as const;
